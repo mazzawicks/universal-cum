@@ -1,4 +1,4 @@
-# Universal Cum, a game for Lewdie Jam 3, inspired by Universal Paper Clips
+# Universal Cum, a game for Lewdie Jam 3, inspired by Universal Cum
 
 - (Soon to be) Hosted at [mazzawicks.com](http://mazzawicks.com/universal/)
 

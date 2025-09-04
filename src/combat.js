@@ -216,19 +216,19 @@ function battleWrite(newBattle){
     var battleDetailsP = document.createElement("p");
     battleDetailsP.setAttribute("class", "clean");
     
-    var clipsLabelSpan = document.createElement("span");
-    clipsLabelSpan.style.fontWeight = "bold";
+    var cumLabelSpan = document.createElement("span");
+    cumLabelSpan.style.fontWeight = "bold";
     
-    var clipsLabel = document.createTextNode("Clips: ");
-    clipsLabelSpan.appendChild(clipsLabel);
+    var cumLabel = document.createTextNode("Cum: ");
+    cumLabelSpan.appendChild(cumLabel);
     
-    battleDetailsP.appendChild(clipsLabelSpan);
+    battleDetailsP.appendChild(cumLabelSpan);
     
-    var clipProbeCountSpan = document.createElement("span");
-    clipProbeCountSpan.setAttribute("id", "battle"+newBattle.id+"clipCount")
-    var clipProbeCount = document.createTextNode(numberCruncher(newBattle.clipProbes));
-    clipProbeCountSpan.appendChild(clipProbeCount);
-    battleDetailsP.appendChild(clipProbeCountSpan);
+    var cumProbeCountSpan = document.createElement("span");
+    cumProbeCountSpan.setAttribute("id", "battle"+newBattle.id+"cumCount")
+    var cumProbeCount = document.createTextNode(numberCruncher(newBattle.cumProbes));
+    cumProbeCountSpan.appendChild(cumProbeCount);
+    battleDetailsP.appendChild(cumProbeCountSpan);
     
     var driftersLabelSpan = document.createElement("span");
     driftersLabelSpan.style.fontWeight = "bold";
@@ -279,20 +279,20 @@ function updateBattles(){
     for(var i = 0; i < battles.length; i++){
         r = Math.random();
         if (r>=battleSpeed) {
-            var clipCasualties = battles[i].drifterProbes * drifterCombat * (1-battleSpeed);
-                if (clipCasualties>battles[i].clipProbes){
-                    clipCasualties=battles[i].clipProbes;
+            var cumCasualties = battles[i].drifterProbes * drifterCombat * (1-battleSpeed);
+                if (cumCasualties>battles[i].cumProbes){
+                    cumCasualties=battles[i].cumProbes;
                     }
             
-            battles[i].clipProbes = battles[i].clipProbes - clipCasualties;
-            probeCount = probeCount - clipCasualties;
-            probesLostCombat = probesLostCombat + clipCasualties;
+            battles[i].cumProbes = battles[i].cumProbes - cumCasualties;
+            probeCount = probeCount - cumCasualties;
+            probesLostCombat = probesLostCombat + cumCasualties;
             document.getElementById('probesLostCombatDisplay').innerHTML = numberCruncher(probesLostCombat);
             
-//            document.getElementById('battle'+battles[i].id+"clipCount").innerHTML = numberCruncher(battles[i].clipProbes);
+//            document.getElementById('battle'+battles[i].id+"cumCount").innerHTML = numberCruncher(battles[i].cumProbes);
             
             } else {
-            var drifterCasualties = battles[i].clipProbes * Math.pow(probeCombat, 1.7) * combatEffectiveness;
+            var drifterCasualties = battles[i].cumProbes * Math.pow(probeCombat, 1.7) * combatEffectiveness;
                 if (drifterCasualties>battles[i].drifterProbes){
                     drifterCasualties=battles[i].drifterProbes;
                     }
@@ -307,7 +307,7 @@ function updateBattles(){
             battles[i].victory = true;
         }
     
-        if (battles[i].clipProbes < 1 && battles[i].victory == false){
+        if (battles[i].cumProbes < 1 && battles[i].victory == false){
             battles[i].loss = true;
         }
 
@@ -366,8 +366,8 @@ function updateBattleDisplay(battle){
     var hed = document.createTextNode("Combatants");
     span.appendChild(hed);    
     
-    var clipsCount = document.createElement("span");
-    clipsCount = battle.clipProbes;
+    var cumCount = document.createElement("span");
+    cumCount = battle.cumProbes;
     element.appendChild(span);
     
 }
@@ -885,7 +885,7 @@ function createBattle() {
 
     var newBattle = {
         id: battleID,
-        clipProbes: ss,
+        cumProbes: ss,
         drifterProbes: rr,
         victory: false,
         loss: false,

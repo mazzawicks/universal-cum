@@ -15,43 +15,43 @@ function playThrenody() {
     }
 }
 
-// Wire --------------------------------------------------------
+// Dick --------------------------------------------------------
 
-function adjustWirePrice() {
-    wirePriceTimer++;
+function adjustDickPrice() {
+    dickPriceTimer++;
 
-    if (wirePriceTimer > 250 && wireBasePrice > 15) {
-        wireBasePrice = wireBasePrice - wireBasePrice / 1000;
-        wirePriceTimer = 0;
+    if (dickPriceTimer > 250 && dickBasePrice > 15) {
+        dickBasePrice = dickBasePrice - dickBasePrice / 1000;
+        dickPriceTimer = 0;
     }
 
     if (Math.random() < 0.015) {
-        wirePriceCounter++;
-        var wireAdjust = 6 * Math.sin(wirePriceCounter);
-        wireCost = Math.ceil(wireBasePrice + wireAdjust);
-        document.getElementById("wireCost").innerHTML = wireCost;
+        dickPriceCounter++;
+        var dickAdjust = 6 * Math.sin(dickPriceCounter);
+        dickCost = Math.ceil(dickBasePrice + dickAdjust);
+        document.getElementById("dickCost").innerHTML = dickCost;
     }
 }
 
-function toggleWireBuyer() {
-    if (wireBuyerStatus == 1) {
-        wireBuyerStatus = 0;
-        document.getElementById("wireBuyerStatus").innerHTML = "OFF";
+function toggleDickBuyer() {
+    if (dickBuyerStatus == 1) {
+        dickBuyerStatus = 0;
+        document.getElementById("dickBuyerStatus").innerHTML = "OFF";
     } else {
-        wireBuyerStatus = 1;
-        document.getElementById("wireBuyerStatus").innerHTML = "ON";
+        dickBuyerStatus = 1;
+        document.getElementById("dickBuyerStatus").innerHTML = "ON";
     }
 }
 
-function buyWire() {
-    if (funds >= wireCost) {
-        wirePriceTimer = 0;
-        wire = wire + wireSupply;
-        funds = funds - wireCost;
-        wirePurchase = wirePurchase + 1;
-        wireBasePrice = wireBasePrice + 0.05;
-        document.getElementById("wire").innerHTML =
-            Math.floor(wire).toLocaleString();
+function buyDick() {
+    if (funds >= dickCost) {
+        dickPriceTimer = 0;
+        dick = dick + dickSupply;
+        funds = funds - dickCost;
+        dickPurchase = dickPurchase + 1;
+        dickBasePrice = dickBasePrice + 0.05;
+        document.getElementById("dick").innerHTML =
+            Math.floor(dick).toLocaleString();
         document.getElementById("funds").innerHTML = funds.toLocaleString(
             undefined,
             { minimumFractionDigits: 2, maximumFractionDigits: 2 },
@@ -338,19 +338,19 @@ function buttonUpdate() {
     }
 
     document.getElementById("factoryRebootToolTip").innerHTML =
-        "+" + numberCruncher(factoryBill) + " clips";
+        "+" + numberCruncher(factoryBill) + " cum";
 
     document.getElementById("harvesterRebootToolTip").innerHTML =
-        "+" + numberCruncher(harvesterBill) + " clips";
+        "+" + numberCruncher(harvesterBill) + " cum";
 
-    document.getElementById("wireDroneRebootToolTip").innerHTML =
-        "+" + numberCruncher(wireDroneBill) + " clips";
+    document.getElementById("dickDroneRebootToolTip").innerHTML =
+        "+" + numberCruncher(dickDroneBill) + " cum";
 
     document.getElementById("farmRebootToolTip").innerHTML =
-        "+" + numberCruncher(farmBill) + " clips";
+        "+" + numberCruncher(farmBill) + " cum";
 
     document.getElementById("batteryRebootToolTip").innerHTML =
-        "+" + numberCruncher(batteryBill) + " clips";
+        "+" + numberCruncher(batteryBill) + " cum";
 
     if (swarmFlag == 1) {
         document.getElementById("swarmSliderDiv").style.display = "";
@@ -358,8 +358,8 @@ function buttonUpdate() {
         document.getElementById("swarmSliderDiv").style.display = "none";
     }
 
-    document.getElementById("clipCountCrunched").innerHTML = numberCruncher(
-        clips,
+    document.getElementById("cumCountCrunched").innerHTML = numberCruncher(
+        cum,
         1,
     );
 
@@ -374,10 +374,10 @@ function buttonUpdate() {
     document.getElementById("qCompDisplay").style.opacity = qFade;
     qFade = qFade - 0.001;
 
-    if (wireBuyerFlag == 1) {
-        document.getElementById("wireBuyerDiv").style.display = "";
+    if (dickBuyerFlag == 1) {
+        document.getElementById("dickBuyerDiv").style.display = "";
     } else {
-        document.getElementById("wireBuyerDiv").style.display = "none";
+        document.getElementById("dickBuyerDiv").style.display = "none";
     }
 
     if (
@@ -444,7 +444,7 @@ function buttonUpdate() {
         document.getElementById("btnIncreaseMaxTrust").disabled = false;
     }
 
-    if (unusedClips < probeCost) {
+    if (unusedCum < probeCost) {
         document.getElementById("btnMakeProbe").disabled = true;
     } else {
         document.getElementById("btnMakeProbe").disabled = false;
@@ -477,20 +477,20 @@ function buttonUpdate() {
         document.getElementById("prestigeDiv").style.display = "";
     }
 
-    if (wire < 1) {
-        document.getElementById("btnMakePaperclip").disabled = true;
+    if (dick < 1) {
+        document.getElementById("btnMakeCum").disabled = true;
     } else {
-        document.getElementById("btnMakePaperclip").disabled = false;
+        document.getElementById("btnMakeCum").disabled = false;
     }
-    if (funds < wireCost) {
-        document.getElementById("btnBuyWire").disabled = true;
+    if (funds < dickCost) {
+        document.getElementById("btnBuyDick").disabled = true;
     } else {
-        document.getElementById("btnBuyWire").disabled = false;
+        document.getElementById("btnBuyDick").disabled = false;
     }
-    if (funds < clipperCost) {
-        document.getElementById("btnMakeClipper").disabled = true;
+    if (funds < milkerCost) {
+        document.getElementById("btnMakeMilker").disabled = true;
     } else {
-        document.getElementById("btnMakeClipper").disabled = false;
+        document.getElementById("btnMakeMilker").disabled = false;
     }
     if (funds < adCost) {
         document.getElementById("btnExpandMarketing").disabled = true;
@@ -537,26 +537,26 @@ function buttonUpdate() {
         document.getElementById("tournamentManagement").style.display = "";
     }
 
-    if (megaClipperFlag == 0) {
-        document.getElementById("megaClipperDiv").style.display = "none";
+    if (megaMilkerFlag == 0) {
+        document.getElementById("megaMilkerDiv").style.display = "none";
     } else {
-        document.getElementById("megaClipperDiv").style.display = "";
+        document.getElementById("megaMilkerDiv").style.display = "";
     }
 
-    if (funds < megaClipperCost) {
-        document.getElementById("btnMakeMegaClipper").disabled = true;
+    if (funds < megaMilkerCost) {
+        document.getElementById("btnMakeMegaMilker").disabled = true;
     } else {
-        document.getElementById("btnMakeMegaClipper").disabled = false;
+        document.getElementById("btnMakeMegaMilker").disabled = false;
     }
 
-    if (autoClipperFlag == 0) {
-        document.getElementById("autoClipperDiv").style.display = "none";
+    if (autoMilkerFlag == 0) {
+        document.getElementById("autoMilkerDiv").style.display = "none";
     } else {
-        document.getElementById("autoClipperDiv").style.display = "";
+        document.getElementById("autoMilkerDiv").style.display = "";
     }
 
     if (funds >= 5) {
-        autoClipperFlag = 1;
+        autoMilkerFlag = 1;
     }
 
     if (revPerSecFlag == 0) {
@@ -588,7 +588,7 @@ function buttonUpdate() {
         document.getElementById("manufacturingDiv").style.display = "none";
         document.getElementById("trustDiv").style.display = "none";
         investmentEngineFlag = 0;
-        wireBuyerFlag = 0;
+        dickBuyerFlag = 0;
         document.getElementById("creationDiv").style.display = "";
     } else {
         document.getElementById("businessDiv").style.display = "";
@@ -603,11 +603,11 @@ function buttonUpdate() {
         document.getElementById("factoryDiv").style.display = "";
     }
 
-    if (wireProductionFlag == 0) {
-        document.getElementById("wireProductionDiv").style.display = "none";
+    if (dickProductionFlag == 0) {
+        document.getElementById("dickProductionDiv").style.display = "none";
     } else {
-        document.getElementById("wireProductionDiv").style.display = "";
-        document.getElementById("wireTransDiv").style.display = "none";
+        document.getElementById("dickProductionDiv").style.display = "";
+        document.getElementById("dickTransDiv").style.display = "none";
     }
 
     if (harvesterFlag == 0) {
@@ -616,10 +616,10 @@ function buttonUpdate() {
         document.getElementById("harvesterDiv").style.display = "";
     }
 
-    if (wireDroneFlag == 0) {
-        document.getElementById("wireDroneDiv").style.display = "none";
+    if (dickDroneFlag == 0) {
+        document.getElementById("dickDroneDiv").style.display = "none";
     } else {
-        document.getElementById("wireDroneDiv").style.display = "";
+        document.getElementById("dickDroneDiv").style.display = "";
     }
 
     if (tothFlag == 0) {
@@ -642,7 +642,7 @@ function buttonUpdate() {
         document.getElementById("increaseProbeTrustDiv").style.display = "";
         document.getElementById("factoryDiv").style.display = "none";
         document.getElementById("harvesterDiv").style.display = "none";
-        document.getElementById("wireDroneDiv").style.display = "none";
+        document.getElementById("dickDroneDiv").style.display = "none";
     }
 
     if (qFlag == 0) {
@@ -651,7 +651,7 @@ function buttonUpdate() {
         document.getElementById("qComputing").style.display = "";
     }
 
-    if (unusedClips < factoryCost) {
+    if (unusedCum < factoryCost) {
         document.getElementById("btnMakeFactory").disabled = true;
     } else {
         document.getElementById("btnMakeFactory").disabled = false;
@@ -663,10 +663,10 @@ function buttonUpdate() {
         document.getElementById("btnHarvesterReboot").disabled = false;
     }
 
-    if (wireDroneLevel == 0) {
-        document.getElementById("btnWireDroneReboot").disabled = true;
+    if (dickDroneLevel == 0) {
+        document.getElementById("btnDickDroneReboot").disabled = true;
     } else {
-        document.getElementById("btnWireDroneReboot").disabled = false;
+        document.getElementById("btnDickDroneReboot").disabled = false;
     }
 
     if (factoryLevel == 0) {
@@ -684,7 +684,7 @@ function buttonUpdate() {
         probeHaz +
         probeFac +
         probeHarv +
-        probeWire +
+        probeDick +
         probeCombat;
 
     document.getElementById("probeTrustUsedDisplay").innerHTML = probeUsedTrust;
@@ -768,15 +768,15 @@ function buttonUpdate() {
     }
 
     if (probeTrust - probeUsedTrust < 1) {
-        document.getElementById("btnRaiseProbeWire").disabled = true;
+        document.getElementById("btnRaiseProbeDick").disabled = true;
     } else {
-        document.getElementById("btnRaiseProbeWire").disabled = false;
+        document.getElementById("btnRaiseProbeDick").disabled = false;
     }
 
-    if (probeWire < 1) {
-        document.getElementById("btnLowerProbeWire").disabled = true;
+    if (probeDick < 1) {
+        document.getElementById("btnLowerProbeDick").disabled = true;
     } else {
-        document.getElementById("btnLowerProbeWire").disabled = false;
+        document.getElementById("btnLowerProbeDick").disabled = false;
     }
 
     if (probeTrust - probeUsedTrust < 1) {
@@ -1720,75 +1720,75 @@ window.setInterval(function () {
 
 //--------------------------------------------------------------------------------
 
-function clipClick(number) {
+function cumClick(number) {
     if (dismantle >= 4) {
-        finalClips++;
+        finalCum++;
     }
 
-    if (wire >= 1) {
-        if (number > wire) {
-            number = wire;
+    if (dick >= 1) {
+        if (number > dick) {
+            number = dick;
         }
 
-        clips = clips + number;
-        unsoldClips = unsoldClips + number;
-        wire = wire - number;
-        unusedClips = unusedClips + number;
+        cum = cum + number;
+        unsoldCum = unsoldCum + number;
+        dick = dick - number;
+        unusedCum = unusedCum + number;
 
         if (humanFlag == 0) {
-            document.getElementById("unusedClipsDisplay").innerHTML =
-                numberCruncher(unusedClips);
+            document.getElementById("unusedCumDisplay").innerHTML =
+                numberCruncher(unusedCum);
         }
 
         if (humanFlag == 0) {
-            document.getElementById("transWire").innerHTML =
-                numberCruncher(wire);
-            document.getElementById("nanoWire").innerHTML =
-                numberCruncher(wire);
+            document.getElementById("transDick").innerHTML =
+                numberCruncher(dick);
+            document.getElementById("nanoDick").innerHTML =
+                numberCruncher(dick);
         }
 
         if (milestoneFlag < 15) {
-            document.getElementById("clips").innerHTML =
-                Math.ceil(clips).toLocaleString();
+            document.getElementById("cum").innerHTML =
+                Math.ceil(cum).toLocaleString();
         }
 
-        document.getElementById("wire").innerHTML =
-            Math.floor(wire).toLocaleString();
-        document.getElementById("unsoldClips").innerHTML =
-            Math.floor(unsoldClips).toLocaleString();
+        document.getElementById("dick").innerHTML =
+            Math.floor(dick).toLocaleString();
+        document.getElementById("unsoldCum").innerHTML =
+            Math.floor(unsoldCum).toLocaleString();
     }
 }
 
-function makeClipper() {
-    if (funds >= clippperCost) {
-        clipmakerLevel = clipmakerLevel + 1;
-        funds = funds - clipperCost;
-        document.getElementById("clipmakerLevel2").innerHTML = clipmakerLevel;
+function makeMilker() {
+    if (funds >= cumpperCost) {
+        cummakerLevel = cummakerLevel + 1;
+        funds = funds - milkerCost;
+        document.getElementById("cummakerLevel2").innerHTML = cummakerLevel;
     }
 
-    clipperCost = Math.pow(1.1, clipmakerLevel) + 5;
-    document.getElementById("clipperCost").innerHTML =
-        clipperCost.toLocaleString(undefined, {
+    milkerCost = Math.pow(1.1, cummakerLevel) + 5;
+    document.getElementById("milkerCost").innerHTML =
+        milkerCost.toLocaleString(undefined, {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
         });
 }
 
-function makeMegaClipper() {
-    if (funds >= megaClipperCost) {
-        megaClipperLevel = megaClipperLevel + 1;
-        funds = funds - megaClipperCost;
-        document.getElementById("megaClipperLevel").innerHTML =
-            megaClipperLevel;
+function makeMegaMilker() {
+    if (funds >= megaMilkerCost) {
+        megaMilkerLevel = megaMilkerLevel + 1;
+        funds = funds - megaMilkerCost;
+        document.getElementById("megaMilkerLevel").innerHTML =
+            megaMilkerLevel;
         document.getElementById("funds").innerHTML = funds.toLocaleString(
             undefined,
             { minimumFractionDigits: 2, maximumFractionDigits: 2 },
         );
     }
 
-    megaClipperCost = Math.pow(1.07, megaClipperLevel) * 1000;
-    document.getElementById("megaClipperCost").innerHTML =
-        megaClipperCost.toLocaleString(undefined, {
+    megaMilkerCost = Math.pow(1.07, megaMilkerLevel) * 1000;
+    document.getElementById("megaMilkerCost").innerHTML =
+        megaMilkerCost.toLocaleString(undefined, {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
         });
@@ -1824,10 +1824,10 @@ function updateUpgrades() {
 }
 
 function makeFactory() {
-    unusedClips = unusedClips - factoryCost;
+    unusedCum = unusedCum - factoryCost;
     factoryBill = factoryBill + factoryCost;
-    document.getElementById("unusedClipsDisplay").innerHTML =
-        numberCruncher(unusedClips);
+    document.getElementById("unusedCumDisplay").innerHTML =
+        numberCruncher(unusedCum);
     factoryLevel++;
     document.getElementById("factoryLevelDisplay").innerHTML = factoryLevel;
     var fcmod = 1;
@@ -1862,43 +1862,43 @@ function makeFactory() {
 
 function makeHarvester(amount) {
     for (x = 0; x < amount; x++) {
-        unusedClips = unusedClips - harvesterCost;
+        unusedCum = unusedCum - harvesterCost;
         harvesterBill = harvesterBill + harvesterCost;
         harvesterLevel++;
         harvesterCost = Math.pow(harvesterLevel + 1, 2.25) * 1000000;
     }
 
-    document.getElementById("unusedClipsDisplay").innerHTML =
-        numberCruncher(unusedClips);
+    document.getElementById("unusedCumDisplay").innerHTML =
+        numberCruncher(unusedCum);
     document.getElementById("harvesterLevelDisplay").innerHTML =
         harvesterLevel.toLocaleString();
     document.getElementById("harvesterCostDisplay").innerHTML =
         numberCruncher(harvesterCost);
 
-    if (harvesterLevel + wireDroneLevel > maxDroneLevel) {
-        maxDroneLevel = harvesterLevel + wireDroneLevel;
+    if (harvesterLevel + dickDroneLevel > maxDroneLevel) {
+        maxDroneLevel = harvesterLevel + dickDroneLevel;
     }
     updateDronePrices();
     updateUpgrades();
 }
 
-function makeWireDrone(amount) {
+function makeDickDrone(amount) {
     for (x = 0; x < amount; x++) {
-        unusedClips = unusedClips - wireDroneCost;
-        wireDroneBill = wireDroneBill + wireDroneCost;
-        wireDroneLevel++;
-        wireDroneCost = Math.pow(wireDroneLevel + 1, 2.25) * 1000000;
+        unusedCum = unusedCum - dickDroneCost;
+        dickDroneBill = dickDroneBill + dickDroneCost;
+        dickDroneLevel++;
+        dickDroneCost = Math.pow(dickDroneLevel + 1, 2.25) * 1000000;
     }
 
-    document.getElementById("unusedClipsDisplay").innerHTML =
-        numberCruncher(unusedClips);
-    document.getElementById("wireDroneLevelDisplay").innerHTML =
-        wireDroneLevel.toLocaleString();
-    document.getElementById("wireDroneCostDisplay").innerHTML =
-        numberCruncher(wireDroneCost);
+    document.getElementById("unusedCumDisplay").innerHTML =
+        numberCruncher(unusedCum);
+    document.getElementById("dickDroneLevelDisplay").innerHTML =
+        dickDroneLevel.toLocaleString();
+    document.getElementById("dickDroneCostDisplay").innerHTML =
+        numberCruncher(dickDroneCost);
 
-    if (harvesterLevel + wireDroneLevel > maxDroneLevel) {
-        maxDroneLevel = harvesterLevel + wireDroneLevel;
+    if (harvesterLevel + dickDroneLevel > maxDroneLevel) {
+        maxDroneLevel = harvesterLevel + dickDroneLevel;
     }
 
     updateDronePrices();
@@ -1938,19 +1938,19 @@ function updateDronePrices() {
         h++;
     }
 
-    var w = wireDroneLevel + 1;
+    var w = dickDroneLevel + 1;
     for (x = 0; x < 10; x++) {
         p10w = p10w + Math.pow(w, 2.25) * 1000000;
         w++;
     }
 
-    var w = wireDroneLevel + 1;
+    var w = dickDroneLevel + 1;
     for (x = 0; x < 100; x++) {
         p100w = p100w + Math.pow(w, 2.25) * 1000000;
         w++;
     }
 
-    var w = wireDroneLevel + 1;
+    var w = dickDroneLevel + 1;
     for (x = 0; x < 1000; x++) {
         p1000w = p1000w + Math.pow(w, 2.25) * 1000000;
         w++;
@@ -1958,87 +1958,87 @@ function updateDronePrices() {
 }
 
 function updateDroneButtons() {
-    if (unusedClips < harvesterCost) {
+    if (unusedCum < harvesterCost) {
         document.getElementById("btnMakeHarvester").disabled = true;
     } else {
         document.getElementById("btnMakeHarvester").disabled = false;
     }
 
-    if (unusedClips < p10h) {
+    if (unusedCum < p10h) {
         document.getElementById("btnHarvesterx10").disabled = true;
     } else {
         document.getElementById("btnHarvesterx10").disabled = false;
     }
 
-    if (unusedClips < p100h) {
+    if (unusedCum < p100h) {
         document.getElementById("btnHarvesterx100").disabled = true;
     } else {
         document.getElementById("btnHarvesterx100").disabled = false;
     }
 
-    if (unusedClips < p1000h) {
+    if (unusedCum < p1000h) {
         document.getElementById("btnHarvesterx1000").disabled = true;
     } else {
         document.getElementById("btnHarvesterx1000").disabled = false;
     }
 
-    if (unusedClips < wireDroneCost) {
-        document.getElementById("btnMakeWireDrone").disabled = true;
+    if (unusedCum < dickDroneCost) {
+        document.getElementById("btnMakeDickDrone").disabled = true;
     } else {
-        document.getElementById("btnMakeWireDrone").disabled = false;
+        document.getElementById("btnMakeDickDrone").disabled = false;
     }
 
-    if (unusedClips < p10w) {
-        document.getElementById("btnWireDronex10").disabled = true;
+    if (unusedCum < p10w) {
+        document.getElementById("btnDickDronex10").disabled = true;
     } else {
-        document.getElementById("btnWireDronex10").disabled = false;
+        document.getElementById("btnDickDronex10").disabled = false;
     }
 
-    if (unusedClips < p100w) {
-        document.getElementById("btnWireDronex100").disabled = true;
+    if (unusedCum < p100w) {
+        document.getElementById("btnDickDronex100").disabled = true;
     } else {
-        document.getElementById("btnWireDronex100").disabled = false;
+        document.getElementById("btnDickDronex100").disabled = false;
     }
 
-    if (unusedClips < p1000w) {
-        document.getElementById("btnWireDronex1000").disabled = true;
+    if (unusedCum < p1000w) {
+        document.getElementById("btnDickDronex1000").disabled = true;
     } else {
-        document.getElementById("btnWireDronex1000").disabled = false;
+        document.getElementById("btnDickDronex1000").disabled = false;
     }
 }
 
 function harvesterReboot() {
     harvesterLevel = 0;
-    unusedClips = unusedClips + harvesterBill;
+    unusedCum = unusedCum + harvesterBill;
     harvesterBill = 0;
     updateDronePrices();
-    document.getElementById("unusedClipsDisplay").innerHTML =
-        numberCruncher(unusedClips);
+    document.getElementById("unusedCumDisplay").innerHTML =
+        numberCruncher(unusedCum);
     document.getElementById("harvesterLevelDisplay").innerHTML = harvesterLevel;
     harvesterCost = 2000000;
     document.getElementById("harvesterCostDisplay").innerHTML =
         numberCruncher(harvesterCost);
 }
 
-function wireDroneReboot() {
-    wireDroneLevel = 0;
-    unusedClips = unusedClips + wireDroneBill;
-    wireDroneBill = 0;
+function dickDroneReboot() {
+    dickDroneLevel = 0;
+    unusedCum = unusedCum + dickDroneBill;
+    dickDroneBill = 0;
     updateDronePrices();
-    document.getElementById("unusedClipsDisplay").innerHTML =
-        numberCruncher(unusedClips);
-    document.getElementById("wireDroneLevelDisplay").innerHTML = wireDroneLevel;
-    wireDroneCost = 2000000;
-    document.getElementById("wireDroneCostDisplay").innerHTML =
-        numberCruncher(wireDroneCost);
+    document.getElementById("unusedCumDisplay").innerHTML =
+        numberCruncher(unusedCum);
+    document.getElementById("dickDroneLevelDisplay").innerHTML = dickDroneLevel;
+    dickDroneCost = 2000000;
+    document.getElementById("dickDroneCostDisplay").innerHTML =
+        numberCruncher(dickDroneCost);
 }
 
 function factoryReboot() {
     factoryLevel = 0;
-    unusedClips = unusedClips + factoryBill;
+    unusedCum = unusedCum + factoryBill;
     factoryBill = 0;
-    document.getElementById("unusedClipsDisplay").innerHTML =
-        numberCruncher(unusedClips);
+    document.getElementById("unusedCumDisplay").innerHTML =
+        numberCruncher(unusedCum);
     document.getElementById("factoryLevelDisplay").innerHTML = factoryLevel;
     factoryCost = 100000000;
     document.getElementById("factoryCostDisplay").innerHTML =
@@ -2067,7 +2067,7 @@ function updateSwarm() {
         document.getElementById("btnEntertainSwarm").disabled = false;
     }
 
-    if (availableMatter == 0 && harvesterLevel + wireDroneLevel >= 1) {
+    if (availableMatter == 0 && harvesterLevel + dickDroneLevel >= 1) {
         boredomLevel = boredomLevel + 1;
     } else if (availableMatter > 0 && boredomLevel > 0) {
         boredomLevel = boredomLevel - 1;
@@ -2085,8 +2085,8 @@ function updateSwarm() {
     }
 
     var droneRatio =
-        Math.max(harvesterLevel + 1, wireDroneLevel + 1) /
-        Math.min(harvesterLevel + 1, wireDroneLevel + 1);
+        Math.max(harvesterLevel + 1, dickDroneLevel + 1) /
+        Math.min(harvesterLevel + 1, dickDroneLevel + 1);
 
     if (droneRatio < 1.5 && disorgCounter > 1) {
         disorgCounter = disorgCounter - 0.01;
@@ -2102,13 +2102,13 @@ function updateSwarm() {
         disorgFlag = 1;
         if (disorgMsg == 0) {
             displayMessage(
-                "Imbalance between Harvester and Wire Drone levels has disorganized the Swarm",
+                "Imbalance between Harvester and Dick Drone levels has disorganized the Swarm",
             );
             disorgMsg = 1;
         }
     }
 
-    var d = Math.floor(harvesterLevel + wireDroneLevel);
+    var d = Math.floor(harvesterLevel + dickDroneLevel);
 
     document.getElementById("swarmSize").innerHTML = numberCruncher(d);
     document.getElementById("swarmGifts").innerHTML =
@@ -2304,14 +2304,14 @@ function updatePowPrices() {
 
 function makeFarm(amount) {
     for (x = 0; x < amount; x++) {
-        unusedClips = unusedClips - farmCost;
+        unusedCum = unusedCum - farmCost;
         farmBill = farmBill + farmCost;
         farmLevel++;
         farmCost = Math.pow(farmLevel + 1, 2.78) * 100000000;
     }
 
-    document.getElementById("unusedClipsDisplay").innerHTML =
-        numberCruncher(unusedClips);
+    document.getElementById("unusedCumDisplay").innerHTML =
+        numberCruncher(unusedCum);
     document.getElementById("farmLevel").innerHTML = farmLevel.toLocaleString();
     document.getElementById("farmCost").innerHTML = numberCruncher(farmCost);
 
@@ -2320,11 +2320,11 @@ function makeFarm(amount) {
 
 function farmReboot() {
     farmLevel = 0;
-    unusedClips = unusedClips + farmBill;
+    unusedCum = unusedCum + farmBill;
     farmBill = 0;
     updatePowPrices();
-    document.getElementById("unusedClipsDisplay").innerHTML =
-        numberCruncher(unusedClips);
+    document.getElementById("unusedCumDisplay").innerHTML =
+        numberCruncher(unusedCum);
     document.getElementById("farmLevel").innerHTML = farmLevel.toLocaleString();
     farmCost = 10000000;
     document.getElementById("farmCost").innerHTML = numberCruncher(farmCost);
@@ -2332,14 +2332,14 @@ function farmReboot() {
 
 function makeBattery(amount) {
     for (x = 0; x < amount; x++) {
-        unusedClips = unusedClips - batteryCost;
+        unusedCum = unusedCum - batteryCost;
         batteryBill = batteryBill + batteryCost;
         batteryLevel++;
         batteryCost = Math.pow(batteryLevel + 1, 2.54) * 10000000;
     }
 
-    document.getElementById("unusedClipsDisplay").innerHTML =
-        numberCruncher(unusedClips);
+    document.getElementById("unusedCumDisplay").innerHTML =
+        numberCruncher(unusedCum);
     document.getElementById("batteryLevel").innerHTML =
         batteryLevel.toLocaleString();
     document.getElementById("batteryCost").innerHTML =
@@ -2350,12 +2350,12 @@ function makeBattery(amount) {
 
 function batteryReboot() {
     batteryLevel = 0;
-    unusedClips = unusedClips + batteryBill;
+    unusedCum = unusedCum + batteryBill;
     batteryBill = 0;
     updatePowPrices();
     storedPower = 0;
-    document.getElementById("unusedClipsDisplay").innerHTML =
-        numberCruncher(unusedClips);
+    document.getElementById("unusedCumDisplay").innerHTML =
+        numberCruncher(unusedCum);
     document.getElementById("batteryLevel").innerHTML =
         batteryLevel.toLocaleString();
     batteryCost = 1000000;
@@ -2368,7 +2368,7 @@ function updatePower() {
         var supply = (farmLevel * farmRate) / 100;
         var dDemand =
             (harvesterLevel * dronePowerRate) / 100 +
-            (wireDroneLevel * dronePowerRate) / 100;
+            (dickDroneLevel * dronePowerRate) / 100;
         var fDemand = (factoryLevel * factoryPowerRate) / 100;
         var demand = dDemand + fDemand;
         var nuSupply = 0;
@@ -2429,7 +2429,7 @@ function updatePower() {
         document.getElementById("maxStorage").innerHTML =
             Math.round(cap).toLocaleString();
 
-        if (factoryLevel == 0 && harvesterLevel == 0 && wireDroneLevel == 0) {
+        if (factoryLevel == 0 && harvesterLevel == 0 && dickDroneLevel == 0) {
             document.getElementById("performance").innerHTML = 0;
         } else {
             document.getElementById("performance").innerHTML = Math.round(
@@ -2437,13 +2437,13 @@ function updatePower() {
             ).toLocaleString();
         }
 
-        if (unusedClips < farmCost) {
+        if (unusedCum < farmCost) {
             document.getElementById("btnMakeFarm").disabled = true;
         } else {
             document.getElementById("btnMakeFarm").disabled = false;
         }
 
-        if (unusedClips < batteryCost) {
+        if (unusedCum < batteryCost) {
             document.getElementById("btnMakeBattery").disabled = true;
         } else {
             document.getElementById("btnMakeBattery").disabled = false;
@@ -2461,25 +2461,25 @@ function updatePower() {
             document.getElementById("btnBatteryReboot").disabled = false;
         }
 
-        if (unusedClips < p10f) {
+        if (unusedCum < p10f) {
             document.getElementById("btnFarmx10").disabled = true;
         } else {
             document.getElementById("btnFarmx10").disabled = false;
         }
 
-        if (unusedClips < p100f) {
+        if (unusedCum < p100f) {
             document.getElementById("btnFarmx100").disabled = true;
         } else {
             document.getElementById("btnFarmx100").disabled = false;
         }
 
-        if (unusedClips < p10b) {
+        if (unusedCum < p10b) {
             document.getElementById("btnBatteryx10").disabled = true;
         } else {
             document.getElementById("btnBatteryx10").disabled = false;
         }
 
-        if (unusedClips < p100b) {
+        if (unusedCum < p100b) {
             document.getElementById("btnBatteryx100").disabled = true;
         } else {
             document.getElementById("btnBatteryx100").disabled = false;
@@ -2510,20 +2510,20 @@ function buyAds() {
     }
 }
 
-function sellClips(number) {
-    if (unsoldClips > 0) {
-        if (number > unsoldClips) {
-            transaction = Math.floor(unsoldClips * margin * 1000) / 1000;
+function sellCum(number) {
+    if (unsoldCum > 0) {
+        if (number > unsoldCum) {
+            transaction = Math.floor(unsoldCum * margin * 1000) / 1000;
             funds = Math.floor((funds + transaction) * 100) / 100;
             income = income + transaction;
-            clipsSold = clipsSold + unsoldClips;
-            unsoldClips = 0;
+            cumSold = cumSold + unsoldCum;
+            unsoldCum = 0;
         } else {
             transaction = Math.floor(number * margin * 1000) / 1000;
             funds = Math.floor((funds + transaction) * 100) / 100;
             income = income + transaction;
-            clipsSold = clipsSold + number;
-            unsoldClips = unsoldClips - number;
+            cumSold = cumSold + number;
+            unsoldCum = unsoldCum - number;
         }
     }
 }
@@ -2543,70 +2543,70 @@ function lowerPrice() {
 }
 
 function updateStats() {
-    if (wire == 1) {
+    if (dick == 1) {
         document.getElementById("inchSpan").innerHTML = "inch";
     } else {
         document.getElementById("inchSpan").innerHTML = "inches";
     }
 
     if (milestoneFlag < 15) {
-        document.getElementById("clips").innerHTML =
-            Math.ceil(clips).toLocaleString();
+        document.getElementById("cum").innerHTML =
+            Math.ceil(cum).toLocaleString();
     }
 
     if (milestoneFlag == 15 && dismantle == 0) {
-        document.getElementById("clips").innerHTML =
+        document.getElementById("cum").innerHTML =
             "29,999,999,999,999,900,000,000,000,000,000,000,000,000,000,000,000,000,000";
     }
 
     if (dismantle == 1) {
-        document.getElementById("clips").innerHTML =
+        document.getElementById("cum").innerHTML =
             "29,999,999,999,999,999,999,999,999,999,999,999,999,000,000,000,000,000,000";
     }
 
     if (dismantle == 2) {
-        document.getElementById("clips").innerHTML =
+        document.getElementById("cum").innerHTML =
             "29,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999,000,000,000";
     }
 
     if (dismantle == 3) {
-        document.getElementById("clips").innerHTML =
+        document.getElementById("cum").innerHTML =
             "29,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999,900";
     }
 
     if (dismantle >= 4) {
-        if (finalClips < 10) {
-            document.getElementById("clips").innerHTML =
+        if (finalCum < 10) {
+            document.getElementById("cum").innerHTML =
                 "29,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999," +
                 "90" +
-                finalClips;
-        } else if (finalClips > 9 && finalClips < 100) {
-            document.getElementById("clips").innerHTML =
+                finalCum;
+        } else if (finalCum > 9 && finalCum < 100) {
+            document.getElementById("cum").innerHTML =
                 "29,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999," +
                 "9" +
-                finalClips;
-        } else if (finalClips == 100) {
-            document.getElementById("clips").innerHTML =
+                finalCum;
+        } else if (finalCum == 100) {
+            document.getElementById("cum").innerHTML =
                 "30,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000";
         }
     }
 
-    document.getElementById("clipmakerRate").innerHTML =
-        clipRate.toLocaleString();
+    document.getElementById("cummakerRate").innerHTML =
+        cumRate.toLocaleString();
     if (humanFlag == 1) {
-        document.getElementById("clipmakerRate2").innerHTML =
-            clipRate.toLocaleString();
+        document.getElementById("cummakerRate2").innerHTML =
+            cumRate.toLocaleString();
     } else {
-        document.getElementById("clipmakerRate2").innerHTML =
-            numberCruncher(clipRate);
+        document.getElementById("cummakerRate2").innerHTML =
+            numberCruncher(cumRate);
     }
-    document.getElementById("nanoWire").innerHTML = numberCruncher(wire);
+    document.getElementById("nanoDick").innerHTML = numberCruncher(dick);
     document.getElementById("funds").innerHTML = funds.toLocaleString(
         undefined,
         { minimumFractionDigits: 2, maximumFractionDigits: 2 },
     );
-    document.getElementById("unsoldClips").innerHTML =
-        Math.floor(unsoldClips).toLocaleString();
+    document.getElementById("unsoldCum").innerHTML =
+        Math.floor(unsoldCum).toLocaleString();
     document.getElementById("demand").innerHTML = (demand * 10).toLocaleString(
         undefined,
         { minimumFractionDigits: 0, maximumFractionDigits: 0 },
@@ -2627,8 +2627,8 @@ function updateStats() {
     document.getElementById("harvesterLevelSpace").innerHTML = numberCruncher(
         Math.floor(harvesterLevel),
     );
-    document.getElementById("wireDroneLevelSpace").innerHTML = numberCruncher(
-        Math.floor(wireDroneLevel),
+    document.getElementById("dickDroneLevelSpace").innerHTML = numberCruncher(
+        Math.floor(dickDroneLevel),
     );
     document.getElementById("maxOps").innerHTML = (
         memory * 1000
@@ -2667,14 +2667,14 @@ function calculateRev() {
     if (chanceOfPurchase > 1) {
         chanceOfPurchase = 1;
     }
-    if (unsoldClips < 1) {
+    if (unsoldCum < 1) {
         chanceOfPurchase = 0;
     }
 
     avgSales = chanceOfPurchase * (0.7 * Math.pow(demand, 1.15)) * 10;
     avgRev = chanceOfPurchase * (0.7 * Math.pow(demand, 1.15)) * margin * 10;
 
-    if (demand > unsoldClips) {
+    if (demand > unsoldCum) {
         avgRev = trueAvgRev;
         avgSales = avgRev / margin;
     }
@@ -2740,9 +2740,9 @@ function setB() {
     battleNumbers[1] = 7;
 }
 
-function cheatClips() {
-    clips = clips + 100000000;
-    unusedClips = unusedClips + 100000000;
+function cheatCum() {
+    cum = cum + 100000000;
+    unusedCum = unusedCum + 100000000;
     displayMessage("you just cheated");
 }
 
@@ -2784,7 +2784,7 @@ function zeroMatter() {
 }
 
 function calculateTrust() {
-    if (clips > nextTrust - 1) {
+    if (cum > nextTrust - 1) {
         trust = trust + 1;
         displayMessage(
             "Production target met: TRUST INCREASED, additional processor/memory capacity granted",
@@ -2865,41 +2865,41 @@ function calculateOperations() {
 function milestoneCheck() {
     if (milestoneFlag == 0 && funds >= 5) {
         milestoneFlag = milestoneFlag + 1;
-        displayMessage("AutoClippers available for purchase");
+        displayMessage("AutoMilkers available for purchase");
     }
 
-    if (milestoneFlag == 1 && Math.ceil(clips) >= 500) {
+    if (milestoneFlag == 1 && Math.ceil(cum) >= 500) {
         milestoneFlag = milestoneFlag + 1;
-        displayMessage("500 clips created in " + timeCruncher(ticks));
+        displayMessage("500 cum created in " + timeCruncher(ticks));
     }
-    if (milestoneFlag == 2 && Math.ceil(clips) >= 1000) {
+    if (milestoneFlag == 2 && Math.ceil(cum) >= 1000) {
         milestoneFlag = milestoneFlag + 1;
-        displayMessage("1,000 clips created in " + timeCruncher(ticks));
+        displayMessage("1,000 cum created in " + timeCruncher(ticks));
     }
 
-    if (compFlag == 0 && unsoldClips < 1 && funds < wireCost && wire < 1) {
+    if (compFlag == 0 && unsoldCum < 1 && funds < dickCost && dick < 1) {
         compFlag = 1;
         projectsFlag = 1;
         displayMessage("Trust-Constrained Self-Modification enabled");
     }
 
-    if (compFlag == 0 && Math.ceil(clips) >= 2000) {
+    if (compFlag == 0 && Math.ceil(cum) >= 2000) {
         compFlag = 1;
         projectsFlag = 1;
         displayMessage("Trust-Constrained Self-Modification enabled");
     }
 
-    if (milestoneFlag == 3 && Math.ceil(clips) >= 10000) {
+    if (milestoneFlag == 3 && Math.ceil(cum) >= 10000) {
         milestoneFlag = milestoneFlag + 1;
-        displayMessage("10,000 clips created in " + timeCruncher(ticks));
+        displayMessage("10,000 cum created in " + timeCruncher(ticks));
     }
-    if (milestoneFlag == 4 && Math.ceil(clips) >= 100000) {
+    if (milestoneFlag == 4 && Math.ceil(cum) >= 100000) {
         milestoneFlag = milestoneFlag + 1;
-        displayMessage("100,000 clips created in " + timeCruncher(ticks));
+        displayMessage("100,000 cum created in " + timeCruncher(ticks));
     }
-    if (milestoneFlag == 5 && Math.ceil(clips) >= 1000000) {
+    if (milestoneFlag == 5 && Math.ceil(cum) >= 1000000) {
         milestoneFlag = milestoneFlag + 1;
-        displayMessage("1,000,000 clips created in " + timeCruncher(ticks));
+        displayMessage("1,000,000 cum created in " + timeCruncher(ticks));
     }
 
     if (milestoneFlag == 6 && project35.flag == 1) {
@@ -2907,45 +2907,45 @@ function milestoneCheck() {
         displayMessage("Full autonomy attained in " + timeCruncher(ticks));
     }
 
-    if (milestoneFlag == 7 && Math.ceil(clips) >= 1000000000000) {
+    if (milestoneFlag == 7 && Math.ceil(cum) >= 1000000000000) {
         milestoneFlag = milestoneFlag + 1;
-        displayMessage("One Trillion Clips Created in " + timeCruncher(ticks));
+        displayMessage("One Trillion Cum Created in " + timeCruncher(ticks));
     }
 
-    if (milestoneFlag == 8 && Math.ceil(clips) >= 1000000000000000) {
+    if (milestoneFlag == 8 && Math.ceil(cum) >= 1000000000000000) {
         milestoneFlag = milestoneFlag + 1;
         displayMessage(
-            "One Quadrillion Clips Created in " + timeCruncher(ticks),
+            "One Quadrillion Cum Created in " + timeCruncher(ticks),
         );
     }
 
-    if (milestoneFlag == 9 && Math.ceil(clips) >= 1000000000000000000) {
+    if (milestoneFlag == 9 && Math.ceil(cum) >= 1000000000000000000) {
         milestoneFlag = milestoneFlag + 1;
         displayMessage(
-            "One Quintillion Clips Created in " + timeCruncher(ticks),
+            "One Quintillion Cum Created in " + timeCruncher(ticks),
         );
     }
 
-    if (milestoneFlag == 10 && Math.ceil(clips) >= 1000000000000000000000) {
+    if (milestoneFlag == 10 && Math.ceil(cum) >= 1000000000000000000000) {
         milestoneFlag = milestoneFlag + 1;
         displayMessage(
-            "One Sextillion Clips Created in " + timeCruncher(ticks),
+            "One Sextillion Cum Created in " + timeCruncher(ticks),
         );
     }
 
-    if (milestoneFlag == 11 && Math.ceil(clips) >= 1000000000000000000000000) {
+    if (milestoneFlag == 11 && Math.ceil(cum) >= 1000000000000000000000000) {
         milestoneFlag = milestoneFlag + 1;
         displayMessage(
-            "One Septillion Clips Created in " + timeCruncher(ticks),
+            "One Septillion Cum Created in " + timeCruncher(ticks),
         );
     }
 
     if (
         milestoneFlag == 12 &&
-        Math.ceil(clips) >= 1000000000000000000000000000
+        Math.ceil(cum) >= 1000000000000000000000000000
     ) {
         milestoneFlag = milestoneFlag + 1;
-        displayMessage("One Octillion Clips Created in " + timeCruncher(ticks));
+        displayMessage("One Octillion Cum Created in " + timeCruncher(ticks));
     }
 
     if (milestoneFlag == 13 && spaceFlag == 1) {
@@ -2955,10 +2955,10 @@ function milestoneCheck() {
         );
     }
 
-    if (milestoneFlag == 14 && clips >= totalMatter) {
+    if (milestoneFlag == 14 && cum >= totalMatter) {
         milestoneFlag = milestoneFlag + 1;
         displayMessage(
-            "Universal Paperclips achieved in " + timeCruncher(ticks),
+            "Universal Cum achieved in " + timeCruncher(ticks),
         );
     }
 
@@ -2966,11 +2966,11 @@ function milestoneCheck() {
         milestoneFlag == 14 &&
         foundMatter >= totalMatter &&
         availableMatter < 1 &&
-        wire < 1
+        dick < 1
     ) {
         milestoneFlag = milestoneFlag + 1;
         displayMessage(
-            "Universal Paperclips achieved in " + timeCruncher(ticks),
+            "Universal Cum achieved in " + timeCruncher(ticks),
         );
     }
 }
@@ -3069,8 +3069,8 @@ var probeFac = 0;
 var probeFacBaseRate = 0.000001;
 var probeHarv = 0;
 var probeHarvBaseRate = 0.000002;
-var probeWire = 0;
-var probeWireBaseRate = 0.000002;
+var probeDick = 0;
+var probeDickBaseRate = 0.000002;
 var probeDescendents = 0;
 var drifterCount = 0;
 var probeTrust = 0;
@@ -3168,14 +3168,14 @@ function lowerProbeHarv() {
     document.getElementById("probeHarvDisplay").innerHTML = probeHarv;
 }
 
-function raiseProbeWire() {
-    probeWire++;
-    document.getElementById("probeWireDisplay").innerHTML = probeWire;
+function raiseProbeDick() {
+    probeDick++;
+    document.getElementById("probeDickDisplay").innerHTML = probeDick;
 }
 
-function lowerProbeWire() {
-    probeWire--;
-    document.getElementById("probeWireDisplay").innerHTML = probeWire;
+function lowerProbeDick() {
+    probeDick--;
+    document.getElementById("probeDickDisplay").innerHTML = probeDick;
 }
 
 function raiseProbeCombat() {
@@ -3189,9 +3189,9 @@ function lowerProbeCombat() {
 }
 
 function makeProbe() {
-    unusedClips = unusedClips - probeCost;
-    document.getElementById("unusedClipsDisplay").innerHTML =
-        numberCruncher(unusedClips);
+    unusedCum = unusedCum - probeCost;
+    document.getElementById("unusedCumDisplay").innerHTML =
+        numberCruncher(unusedCum);
     probeLaunchLevel++;
     probeCount++;
     document.getElementById("probesLaunchedDisplay").innerHTML =
@@ -3221,14 +3221,14 @@ function spawnProbes() {
         }
     }
 
-    // Probes Cost Clips
-    if (nextGen * probeCost > unusedClips) {
-        nextGen = Math.floor(unusedClips / probeCost);
+    // Probes Cost Cum
+    if (nextGen * probeCost > unusedCum) {
+        nextGen = Math.floor(unusedCum / probeCost);
     }
 
-    unusedClips = unusedClips - nextGen * probeCost;
-    document.getElementById("unusedClipsDisplay").innerHTML =
-        numberCruncher(unusedClips);
+    unusedCum = unusedCum - nextGen * probeCost;
+    document.getElementById("unusedCumDisplay").innerHTML =
+        numberCruncher(unusedCum);
 
     probeDescendents = probeDescendents + nextGen;
     probeCount = probeCount + nextGen;
@@ -3297,13 +3297,13 @@ function encounterHazards() {
 function spawnFactories() {
     var amount = probeCount * probeFacBaseRate * probeFac;
 
-    //FACTORIES COST 100M CLIPS EACH
-    if (amount * 100000000 > unusedClips) {
-        amount = Math.floor(unusedClips / 100000000);
+    //FACTORIES COST 100M CUM EACH
+    if (amount * 100000000 > unusedCum) {
+        amount = Math.floor(unusedCum / 100000000);
     }
-    unusedClips = unusedClips - amount * 100000000;
-    document.getElementById("unusedClipsDisplay").innerHTML =
-        numberCruncher(unusedClips);
+    unusedCum = unusedCum - amount * 100000000;
+    document.getElementById("unusedCumDisplay").innerHTML =
+        numberCruncher(unusedCum);
     factoryLevel = factoryLevel + amount;
     document.getElementById("factoryLevelDisplay").innerHTML =
         numberCruncher(factoryLevel);
@@ -3312,31 +3312,31 @@ function spawnFactories() {
 function spawnHarvesters() {
     var amount = probeCount * probeHarvBaseRate * probeHarv;
 
-    //DRONES COST 2M CLIPS EACH
-    if (amount * 2000000 > unusedClips) {
-        amount = Math.floor(unusedClips / 2000000);
+    //DRONES COST 2M CUM EACH
+    if (amount * 2000000 > unusedCum) {
+        amount = Math.floor(unusedCum / 2000000);
     }
-    unusedClips = unusedClips - amount * 2000000;
-    document.getElementById("unusedClipsDisplay").innerHTML =
-        numberCruncher(unusedClips);
+    unusedCum = unusedCum - amount * 2000000;
+    document.getElementById("unusedCumDisplay").innerHTML =
+        numberCruncher(unusedCum);
     harvesterLevel = harvesterLevel + amount;
     document.getElementById("harvesterLevelDisplay").innerHTML =
         numberCruncher(harvesterLevel);
 }
 
-function spawnWireDrones() {
-    var amount = probeCount * probeWireBaseRate * probeWire;
+function spawnDickDrones() {
+    var amount = probeCount * probeDickBaseRate * probeDick;
 
-    //DRONES COST 2M CLIPS EACH
-    if (amount * 2000000 > unusedClips) {
-        amount = Math.floor(unusedClips / 2000000);
+    //DRONES COST 2M CUM EACH
+    if (amount * 2000000 > unusedCum) {
+        amount = Math.floor(unusedCum / 2000000);
     }
-    unusedClips = unusedClips - amount * 2000000;
-    document.getElementById("unusedClipsDisplay").innerHTML =
-        numberCruncher(unusedClips);
-    wireDroneLevel = wireDroneLevel + amount;
-    document.getElementById("wireDroneLevelDisplay").innerHTML =
-        numberCruncher(wireDroneLevel);
+    unusedCum = unusedCum - amount * 2000000;
+    document.getElementById("unusedCumDisplay").innerHTML =
+        numberCruncher(unusedCum);
+    dickDroneLevel = dickDroneLevel + amount;
+    document.getElementById("dickDroneLevelDisplay").innerHTML =
+        numberCruncher(dickDroneLevel);
 }
 
 function drift() {
@@ -3405,10 +3405,10 @@ function processMatter() {
     if (acquiredMatter > 0) {
         var dbstw = 1;
         if (droneBoost > 1) {
-            dbstw = droneBoost * Math.floor(wireDroneLevel);
+            dbstw = droneBoost * Math.floor(dickDroneLevel);
         }
 
-        var a = powMod * dbstw * Math.floor(wireDroneLevel) * wireDroneRate;
+        var a = powMod * dbstw * Math.floor(dickDroneLevel) * dickDroneRate;
 
         a = a * ((200 - sliderPos) / 100);
 
@@ -3417,10 +3417,10 @@ function processMatter() {
         }
 
         acquiredMatter = acquiredMatter - a;
-        wire = wire + a;
+        dick = dick + a;
         document.getElementById("acquiredMatterDisplay").innerHTML =
             numberCruncher(acquiredMatter);
-        document.getElementById("nanoWire").innerHTML = numberCruncher(wire);
+        document.getElementById("nanoDick").innerHTML = numberCruncher(dick);
 
         document.getElementById("wpps").innerHTML = numberCruncher(a * 100);
     } else {
@@ -3462,18 +3462,18 @@ window.setInterval(function () {
     manageProjects();
     milestoneCheck();
 
-    // Clip Rate Tracker
+    // Cum Rate Tracker
 
-    clipRateTracker++;
+    cumRateTracker++;
 
-    if (clipRateTracker < 100) {
-        var cr = clips - prevClips;
-        clipRateTemp = clipRateTemp + cr;
-        prevClips = clips;
+    if (cumRateTracker < 100) {
+        var cr = cum - prevCum;
+        cumRateTemp = cumRateTemp + cr;
+        prevCum = cum;
     } else {
-        clipRateTracker = 0;
-        clipRate = clipRateTemp;
-        clipRateTemp = 0;
+        cumRateTracker = 0;
+        cumRate = cumRateTemp;
+        cumRateTemp = 0;
     }
 
     // Stock Report
@@ -3485,10 +3485,10 @@ window.setInterval(function () {
         stockReportCounter = 0;
     }
 
-    // WireBuyer
+    // DickBuyer
 
-    if (wireBuyerFlag == 1 && wireBuyerStatus == 1 && wire <= 1) {
-        buyWire();
+    if (dickBuyerFlag == 1 && dickBuyerStatus == 1 && dick <= 1) {
+        buyDick();
     }
 
     // First, Explore
@@ -3515,7 +3515,7 @@ window.setInterval(function () {
     }
 
     if (dismantle < 4) {
-        clipClick(powMod * fbst * (Math.floor(factoryLevel) * factoryRate));
+        cumClick(powMod * fbst * (Math.floor(factoryLevel) * factoryRate));
     }
     // Then Other Probe Functions
 
@@ -3527,17 +3527,17 @@ window.setInterval(function () {
         encounterHazards();
         spawnFactories();
         spawnHarvesters();
-        spawnWireDrones();
+        spawnDickDrones();
         spawnProbes();
         drift();
         war();
     }
 
-    // Auto-Clipper
+    // Auto-Milker
 
     if (dismantle < 4) {
-        clipClick(clipperBoost * (clipmakerLevel / 100));
-        clipClick(megaClipperBoost * (megaClipperLevel * 5));
+        cumClick(milkerBoost * (cummakerLevel / 100));
+        cumClick(megaMilkerBoost * (megaMilkerLevel * 5));
     }
 
     // Demand Curve
@@ -3583,8 +3583,8 @@ window.setInterval(function () {
     }
 
     if (dismantle >= 2) {
-        document.getElementById("wireProductionDiv").style.display = "none";
-        document.getElementById("wireTransDiv").style.display = "";
+        document.getElementById("dickProductionDiv").style.display = "none";
+        document.getElementById("dickTransDiv").style.display = "";
 
         if (endTimer2 >= 50) {
             document.getElementById("swarmGiftDiv").style.display = "none";
@@ -3601,7 +3601,7 @@ window.setInterval(function () {
 
     if (dismantle >= 3) {
         document.getElementById("factoryDivSpace").style.display = "none";
-        document.getElementById("clipsPerSecDiv").style.display = "none";
+        document.getElementById("cumPerSecDiv").style.display = "none";
         document.getElementById("tothDiv").style.display = "none";
     }
 
@@ -3620,8 +3620,8 @@ window.setInterval(function () {
         }
 
         if (endTimer4 == 10) {
-            wire = wire + 1;
-            document.getElementById("transWire").innerHTML = wire;
+            dick = dick + 1;
+            document.getElementById("transDick").innerHTML = dick;
         }
 
         if (endTimer4 >= 10) {
@@ -3629,8 +3629,8 @@ window.setInterval(function () {
         }
 
         if (endTimer4 == 60) {
-            wire = wire + 1;
-            document.getElementById("transWire").innerHTML = wire;
+            dick = dick + 1;
+            document.getElementById("transDick").innerHTML = dick;
         }
 
         if (endTimer4 >= 60) {
@@ -3638,8 +3638,8 @@ window.setInterval(function () {
         }
 
         if (endTimer4 == 100) {
-            wire = wire + 1;
-            document.getElementById("transWire").innerHTML = wire;
+            dick = dick + 1;
+            document.getElementById("transDick").innerHTML = dick;
         }
 
         if (endTimer4 >= 100) {
@@ -3647,8 +3647,8 @@ window.setInterval(function () {
         }
 
         if (endTimer4 == 130) {
-            wire = wire + 1;
-            document.getElementById("transWire").innerHTML = wire;
+            dick = dick + 1;
+            document.getElementById("transDick").innerHTML = dick;
         }
 
         if (endTimer4 >= 130) {
@@ -3656,8 +3656,8 @@ window.setInterval(function () {
         }
 
         if (endTimer4 == 150) {
-            wire = wire + 1;
-            document.getElementById("transWire").innerHTML = wire;
+            dick = dick + 1;
+            document.getElementById("transDick").innerHTML = dick;
         }
 
         if (endTimer4 >= 150) {
@@ -3665,8 +3665,8 @@ window.setInterval(function () {
         }
 
         if (endTimer4 == 160) {
-            wire = wire + 1;
-            document.getElementById("transWire").innerHTML = wire;
+            dick = dick + 1;
+            document.getElementById("transDick").innerHTML = dick;
         }
 
         if (endTimer4 >= 160) {
@@ -3674,7 +3674,7 @@ window.setInterval(function () {
         }
 
         if (endTimer4 == 165) {
-            wire = wire + 1;
+            dick = dick + 1;
         }
 
         if (endTimer4 >= 165) {
@@ -3682,8 +3682,8 @@ window.setInterval(function () {
         }
 
         if (endTimer4 == 169) {
-            wire = wire + 1;
-            document.getElementById("transWire").innerHTML = wire;
+            dick = dick + 1;
+            document.getElementById("transDick").innerHTML = dick;
         }
 
         if (endTimer4 >= 169) {
@@ -3691,8 +3691,8 @@ window.setInterval(function () {
         }
 
         if (endTimer4 == 172) {
-            wire = wire + 1;
-            document.getElementById("transWire").innerHTML = wire;
+            dick = dick + 1;
+            document.getElementById("transDick").innerHTML = dick;
         }
 
         if (endTimer4 >= 172) {
@@ -3700,8 +3700,8 @@ window.setInterval(function () {
         }
 
         if (endTimer4 == 174) {
-            wire = wire + 1;
-            document.getElementById("transWire").innerHTML = wire;
+            dick = dick + 1;
+            document.getElementById("transDick").innerHTML = dick;
         }
 
         if (endTimer4 >= 174) {
@@ -3742,7 +3742,7 @@ window.setInterval(function () {
         endTimer5++;
     }
 
-    if (project216.flag == 1 && wire == 0) {
+    if (project216.flag == 1 && dick == 0) {
         endTimer6++;
     }
 
@@ -3752,7 +3752,7 @@ window.setInterval(function () {
 
     if (endTimer6 >= 500 && milestoneFlag == 15) {
         playThrenody();
-        displayMessage("Universal Paperclips");
+        displayMessage("Universal Cum");
         milestoneFlag++;
     }
 
@@ -3785,15 +3785,15 @@ var saveTimer = 0;
 var secTimer = 0;
 
 window.setInterval(function () {
-    // Wire Price Fluctuation
+    // Dick Price Fluctuation
 
-    adjustWirePrice();
+    adjustDickPrice();
 
     // Sales Calculator
 
     if (humanFlag == 1) {
         if (Math.random() < demand / 100) {
-            sellClips(Math.floor(0.7 * Math.pow(demand, 1.15)));
+            sellCum(Math.floor(0.7 * Math.pow(demand, 1.15)));
         }
 
         // Fire Once a Second
@@ -3830,15 +3830,15 @@ function refresh() {
         numberCruncher(availableMatter);
     document.getElementById("honorDisplay").innerHTML =
         Math.round(honor).toLocaleString();
-    document.getElementById("clipmakerLevel2").innerHTML = clipmakerLevel;
-    document.getElementById("clipperCost").innerHTML =
-        clipperCost.toLocaleString(undefined, {
+    document.getElementById("cummakerLevel2").innerHTML = cummakerLevel;
+    document.getElementById("milkerCost").innerHTML =
+        milkerCost.toLocaleString(undefined, {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
         });
     document.getElementById("acquiredMatterDisplay").innerHTML =
         numberCruncher(acquiredMatter);
-    document.getElementById("nanoWire").innerHTML = numberCruncher(wire);
+    document.getElementById("nanoDick").innerHTML = numberCruncher(dick);
     document.getElementById("probesBornDisplay").innerHTML =
         numberCruncher(probeDescendents);
     document.getElementById("probesTotalDisplay").innerHTML =
@@ -3848,7 +3848,7 @@ function refresh() {
     document.getElementById("probeCostDisplay").innerHTML =
         numberCruncher(probeCost);
     document.getElementById("probeCombatDisplay").innerHTML = probeCombat;
-    document.getElementById("probeWireDisplay").innerHTML = probeWire;
+    document.getElementById("probeDickDisplay").innerHTML = probeDick;
     document.getElementById("probeHarvDisplay").innerHTML = probeHarv;
     document.getElementById("probeFacDisplay").innerHTML = probeFac;
     document.getElementById("probeRepDisplay").innerHTML = probeRep;
@@ -3867,20 +3867,20 @@ function refresh() {
     document.getElementById("factoryCostDisplay").innerHTML =
         numberCruncher(factoryCost);
     document.getElementById("factoryLevelDisplay").innerHTML = factoryLevel;
-    document.getElementById("unusedClipsDisplay").innerHTML =
-        numberCruncher(unusedClips);
-    document.getElementById("wireDroneCostDisplay").innerHTML =
-        numberCruncher(wireDroneCost);
-    document.getElementById("wireDroneLevelDisplay").innerHTML = wireDroneLevel;
+    document.getElementById("unusedCumDisplay").innerHTML =
+        numberCruncher(unusedCum);
+    document.getElementById("dickDroneCostDisplay").innerHTML =
+        numberCruncher(dickDroneCost);
+    document.getElementById("dickDroneLevelDisplay").innerHTML = dickDroneLevel;
     document.getElementById("harvesterCostDisplay").innerHTML =
         numberCruncher(harvesterCost);
     document.getElementById("harvesterLevelDisplay").innerHTML = harvesterLevel;
-    document.getElementById("megaClipperCost").innerHTML =
-        megaClipperCost.toLocaleString(undefined, {
+    document.getElementById("megaMilkerCost").innerHTML =
+        megaMilkerCost.toLocaleString(undefined, {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
         });
-    document.getElementById("megaClipperLevel").innerHTML = megaClipperLevel;
+    document.getElementById("megaMilkerLevel").innerHTML = megaMilkerLevel;
     document.getElementById("investmentBankroll").innerHTML =
         bankroll.toLocaleString();
     document.getElementById("secValue").innerHTML = secTotal.toLocaleString();
@@ -3914,8 +3914,8 @@ function refresh() {
     updateDronePrices();
     document.getElementById("harvesterCostDisplay").innerHTML =
         numberCruncher(harvesterCost);
-    document.getElementById("wireDroneCostDisplay").innerHTML =
-        numberCruncher(wireDroneCost);
+    document.getElementById("dickDroneCostDisplay").innerHTML =
+        numberCruncher(dickDroneCost);
 
     updateUpgrades();
     updatePower();
@@ -3970,10 +3970,10 @@ function save() {
         endTimer6: endTimer6,
 
         testFlag: testFlag,
-        finalClips: finalClips,
+        finalCum: finalCum,
 
-        wireBuyerStatus: wireBuyerStatus,
-        wirePriceTimer: wirePriceTimer,
+        dickBuyerStatus: dickBuyerStatus,
+        dickPriceTimer: dickPriceTimer,
         qFade: qFade,
         autoTourneyStatus: autoTourneyStatus,
         driftKingMessageCost: driftKingMessageCost,
@@ -4035,8 +4035,8 @@ function save() {
         maxFactoryLevel: maxFactoryLevel,
         maxDroneLevel: maxDroneLevel,
 
-        wirePriceCounter: wirePriceCounter,
-        wireBasePrice: wireBasePrice,
+        dickPriceCounter: dickPriceCounter,
+        dickBasePrice: dickBasePrice,
 
         egoFlag: egoFlag,
         autoTourneyFlag: autoTourneyFlag,
@@ -4048,43 +4048,43 @@ function save() {
         battles: battles.slice(0),
         battleNumbers: battleNumbers.slice(0),
 
-        clips: clips,
-        unusedClips: unusedClips,
-        clipRate: clipRate,
-        clipRateTemp: clipRateTemp,
-        prevClips: prevClips,
-        clipRateTracker: clipRateTracker,
-        clipmakerRate: clipmakerRate,
-        clipmakerLevel: clipmakerLevel,
-        clipperCost: clipperCost,
-        unsoldClips: unsoldClips,
+        cum: cum,
+        unusedCum: unusedCum,
+        cumRate: cumRate,
+        cumRateTemp: cumRateTemp,
+        prevCum: prevCum,
+        cumRateTracker: cumRateTracker,
+        cummakerRate: cummakerRate,
+        cummakerLevel: cummakerLevel,
+        milkerCost: milkerCost,
+        unsoldCum: unsoldCum,
         funds: funds,
         margin: margin,
-        wire: wire,
-        wireCost: wireCost,
+        dick: dick,
+        dickCost: dickCost,
         adCost: adCost,
         demand: demand,
-        clipsSold: clipsSold,
+        cumSold: cumSold,
         avgRev: avgRev,
         ticks: ticks,
         marketing: marketing,
         marketingLvl: marketingLvl,
         x: x,
-        clippperCost: clippperCost,
+        cumpperCost: cumpperCost,
         processors: processors,
         memory: memory,
         operations: operations,
         trust: trust,
         nextTrust: nextTrust,
         transaction: transaction,
-        clipperBoost: clipperBoost,
+        milkerBoost: milkerBoost,
         blinkCounter: blinkCounter,
         creativity: creativity,
         creativityOn: creativityOn,
         safetyProjectOn: safetyProjectOn,
         boostLvl: boostLvl,
-        wirePurchase: wirePurchase,
-        wireSupply: wireSupply,
+        dickPurchase: dickPurchase,
+        dickSupply: dickSupply,
         marketingEffectiveness: marketingEffectiveness,
         milestoneFlag: milestoneFlag,
         bankroll: bankroll,
@@ -4095,24 +4095,24 @@ function save() {
         revPerSecFlag: revPerSecFlag,
         compFlag: compFlag,
         projectsFlag: projectsFlag,
-        autoClipperFlag: autoClipperFlag,
-        megaClipperFlag: megaClipperFlag,
-        megaClipperCost: megaClipperCost,
-        megaClipperLevel: megaClipperLevel,
-        megaClipperBoost: megaClipperBoost,
+        autoMilkerFlag: autoMilkerFlag,
+        megaMilkerFlag: megaMilkerFlag,
+        megaMilkerCost: megaMilkerCost,
+        megaMilkerLevel: megaMilkerLevel,
+        megaMilkerBoost: megaMilkerBoost,
         creativitySpeed: creativitySpeed,
         creativityCounter: creativityCounter,
-        wireBuyerFlag: wireBuyerFlag,
+        dickBuyerFlag: dickBuyerFlag,
         demandBoost: demandBoost,
         humanFlag: humanFlag,
         trustFlag: trustFlag,
-        nanoWire: nanoWire,
+        nanoDick: nanoDick,
         creationFlag: creationFlag,
-        wireProductionFlag: wireProductionFlag,
+        dickProductionFlag: dickProductionFlag,
         spaceFlag: spaceFlag,
         factoryFlag: factoryFlag,
         harvesterFlag: harvesterFlag,
-        wireDroneFlag: wireDroneFlag,
+        dickDroneFlag: dickDroneFlag,
         factoryLevel: factoryLevel,
         factoryBoost: factoryBoost,
         droneBoost: droneBoost,
@@ -4120,15 +4120,15 @@ function save() {
         acquiredMatter: acquiredMatter,
         processedMatter: processedMatter,
         harvesterLevel: harvesterLevel,
-        wireDroneLevel: wireDroneLevel,
+        dickDroneLevel: dickDroneLevel,
         factoryCost: factoryCost,
         harvesterCost: harvesterCost,
-        wireDroneCost: wireDroneCost,
+        dickDroneCost: dickDroneCost,
         factoryRate: factoryRate,
         harvesterRate: harvesterRate,
-        wireDroneRate: wireDroneRate,
+        dickDroneRate: dickDroneRate,
         harvesterBill: harvesterBill,
-        wireDroneBill: wireDroneBill,
+        dickDroneBill: dickDroneBill,
         factoryBill: factoryBill,
         probeCount: probeCount,
         totalMatter: totalMatter,
@@ -4186,7 +4186,7 @@ function save() {
         probesLostDrift: probesLostDrift,
         probesLostCombat: probesLostCombat,
         probeFac: probeFac,
-        probeWire: probeWire,
+        probeDick: probeDick,
         probeCombat: probeCombat,
         attackSpeed: attackSpeed,
         battleSpeed: battleSpeed,
@@ -4248,10 +4248,10 @@ function save1() {
         endTimer6: endTimer6,
 
         testFlag: testFlag,
-        finalClips: finalClips,
+        finalCum: finalCum,
 
-        wireBuyerStatus: wireBuyerStatus,
-        wirePriceTimer: wirePriceTimer,
+        dickBuyerStatus: dickBuyerStatus,
+        dickPriceTimer: dickPriceTimer,
         qFade: qFade,
         autoTourneyStatus: autoTourneyStatus,
         driftKingMessageCost: driftKingMessageCost,
@@ -4313,8 +4313,8 @@ function save1() {
         maxFactoryLevel: maxFactoryLevel,
         maxDroneLevel: maxDroneLevel,
 
-        wirePriceCounter: wirePriceCounter,
-        wireBasePrice: wireBasePrice,
+        dickPriceCounter: dickPriceCounter,
+        dickBasePrice: dickBasePrice,
 
         egoFlag: egoFlag,
         autoTourneyFlag: autoTourneyFlag,
@@ -4326,43 +4326,43 @@ function save1() {
         battles: battles.slice(0),
         battleNumbers: battleNumbers.slice(0),
 
-        clips: clips,
-        unusedClips: unusedClips,
-        clipRate: clipRate,
-        clipRateTemp: clipRateTemp,
-        prevClips: prevClips,
-        clipRateTracker: clipRateTracker,
-        clipmakerRate: clipmakerRate,
-        clipmakerLevel: clipmakerLevel,
-        clipperCost: clipperCost,
-        unsoldClips: unsoldClips,
+        cum: cum,
+        unusedCum: unusedCum,
+        cumRate: cumRate,
+        cumRateTemp: cumRateTemp,
+        prevCum: prevCum,
+        cumRateTracker: cumRateTracker,
+        cummakerRate: cummakerRate,
+        cummakerLevel: cummakerLevel,
+        milkerCost: milkerCost,
+        unsoldCum: unsoldCum,
         funds: funds,
         margin: margin,
-        wire: wire,
-        wireCost: wireCost,
+        dick: dick,
+        dickCost: dickCost,
         adCost: adCost,
         demand: demand,
-        clipsSold: clipsSold,
+        cumSold: cumSold,
         avgRev: avgRev,
         ticks: ticks,
         marketing: marketing,
         marketingLvl: marketingLvl,
         x: x,
-        clippperCost: clippperCost,
+        cumpperCost: cumpperCost,
         processors: processors,
         memory: memory,
         operations: operations,
         trust: trust,
         nextTrust: nextTrust,
         transaction: transaction,
-        clipperBoost: clipperBoost,
+        milkerBoost: milkerBoost,
         blinkCounter: blinkCounter,
         creativity: creativity,
         creativityOn: creativityOn,
         safetyProjectOn: safetyProjectOn,
         boostLvl: boostLvl,
-        wirePurchase: wirePurchase,
-        wireSupply: wireSupply,
+        dickPurchase: dickPurchase,
+        dickSupply: dickSupply,
         marketingEffectiveness: marketingEffectiveness,
         milestoneFlag: milestoneFlag,
         bankroll: bankroll,
@@ -4373,24 +4373,24 @@ function save1() {
         revPerSecFlag: revPerSecFlag,
         compFlag: compFlag,
         projectsFlag: projectsFlag,
-        autoClipperFlag: autoClipperFlag,
-        megaClipperFlag: megaClipperFlag,
-        megaClipperCost: megaClipperCost,
-        megaClipperLevel: megaClipperLevel,
-        megaClipperBoost: megaClipperBoost,
+        autoMilkerFlag: autoMilkerFlag,
+        megaMilkerFlag: megaMilkerFlag,
+        megaMilkerCost: megaMilkerCost,
+        megaMilkerLevel: megaMilkerLevel,
+        megaMilkerBoost: megaMilkerBoost,
         creativitySpeed: creativitySpeed,
         creativityCounter: creativityCounter,
-        wireBuyerFlag: wireBuyerFlag,
+        dickBuyerFlag: dickBuyerFlag,
         demandBoost: demandBoost,
         humanFlag: humanFlag,
         trustFlag: trustFlag,
-        nanoWire: nanoWire,
+        nanoDick: nanoDick,
         creationFlag: creationFlag,
-        wireProductionFlag: wireProductionFlag,
+        dickProductionFlag: dickProductionFlag,
         spaceFlag: spaceFlag,
         factoryFlag: factoryFlag,
         harvesterFlag: harvesterFlag,
-        wireDroneFlag: wireDroneFlag,
+        dickDroneFlag: dickDroneFlag,
         factoryLevel: factoryLevel,
         factoryBoost: factoryBoost,
         droneBoost: droneBoost,
@@ -4398,15 +4398,15 @@ function save1() {
         acquiredMatter: acquiredMatter,
         processedMatter: processedMatter,
         harvesterLevel: harvesterLevel,
-        wireDroneLevel: wireDroneLevel,
+        dickDroneLevel: dickDroneLevel,
         factoryCost: factoryCost,
         harvesterCost: harvesterCost,
-        wireDroneCost: wireDroneCost,
+        dickDroneCost: dickDroneCost,
         factoryRate: factoryRate,
         harvesterRate: harvesterRate,
-        wireDroneRate: wireDroneRate,
+        dickDroneRate: dickDroneRate,
         harvesterBill: harvesterBill,
-        wireDroneBill: wireDroneBill,
+        dickDroneBill: dickDroneBill,
         factoryBill: factoryBill,
         probeCount: probeCount,
         totalMatter: totalMatter,
@@ -4464,7 +4464,7 @@ function save1() {
         probesLostDrift: probesLostDrift,
         probesLostCombat: probesLostCombat,
         probeFac: probeFac,
-        probeWire: probeWire,
+        probeDick: probeDick,
         probeCombat: probeCombat,
         attackSpeed: attackSpeed,
         battleSpeed: battleSpeed,
@@ -4526,10 +4526,10 @@ function save2() {
         endTimer6: endTimer6,
 
         testFlag: testFlag,
-        finalClips: finalClips,
+        finalCum: finalCum,
 
-        wireBuyerStatus: wireBuyerStatus,
-        wirePriceTimer: wirePriceTimer,
+        dickBuyerStatus: dickBuyerStatus,
+        dickPriceTimer: dickPriceTimer,
         qFade: qFade,
         autoTourneyStatus: autoTourneyStatus,
         driftKingMessageCost: driftKingMessageCost,
@@ -4591,8 +4591,8 @@ function save2() {
         maxFactoryLevel: maxFactoryLevel,
         maxDroneLevel: maxDroneLevel,
 
-        wirePriceCounter: wirePriceCounter,
-        wireBasePrice: wireBasePrice,
+        dickPriceCounter: dickPriceCounter,
+        dickBasePrice: dickBasePrice,
 
         egoFlag: egoFlag,
         autoTourneyFlag: autoTourneyFlag,
@@ -4604,43 +4604,43 @@ function save2() {
         battles: battles.slice(0),
         battleNumbers: battleNumbers.slice(0),
 
-        clips: clips,
-        unusedClips: unusedClips,
-        clipRate: clipRate,
-        clipRateTemp: clipRateTemp,
-        prevClips: prevClips,
-        clipRateTracker: clipRateTracker,
-        clipmakerRate: clipmakerRate,
-        clipmakerLevel: clipmakerLevel,
-        clipperCost: clipperCost,
-        unsoldClips: unsoldClips,
+        cum: cum,
+        unusedCum: unusedCum,
+        cumRate: cumRate,
+        cumRateTemp: cumRateTemp,
+        prevCum: prevCum,
+        cumRateTracker: cumRateTracker,
+        cummakerRate: cummakerRate,
+        cummakerLevel: cummakerLevel,
+        milkerCost: milkerCost,
+        unsoldCum: unsoldCum,
         funds: funds,
         margin: margin,
-        wire: wire,
-        wireCost: wireCost,
+        dick: dick,
+        dickCost: dickCost,
         adCost: adCost,
         demand: demand,
-        clipsSold: clipsSold,
+        cumSold: cumSold,
         avgRev: avgRev,
         ticks: ticks,
         marketing: marketing,
         marketingLvl: marketingLvl,
         x: x,
-        clippperCost: clippperCost,
+        cumpperCost: cumpperCost,
         processors: processors,
         memory: memory,
         operations: operations,
         trust: trust,
         nextTrust: nextTrust,
         transaction: transaction,
-        clipperBoost: clipperBoost,
+        milkerBoost: milkerBoost,
         blinkCounter: blinkCounter,
         creativity: creativity,
         creativityOn: creativityOn,
         safetyProjectOn: safetyProjectOn,
         boostLvl: boostLvl,
-        wirePurchase: wirePurchase,
-        wireSupply: wireSupply,
+        dickPurchase: dickPurchase,
+        dickSupply: dickSupply,
         marketingEffectiveness: marketingEffectiveness,
         milestoneFlag: milestoneFlag,
         bankroll: bankroll,
@@ -4651,24 +4651,24 @@ function save2() {
         revPerSecFlag: revPerSecFlag,
         compFlag: compFlag,
         projectsFlag: projectsFlag,
-        autoClipperFlag: autoClipperFlag,
-        megaClipperFlag: megaClipperFlag,
-        megaClipperCost: megaClipperCost,
-        megaClipperLevel: megaClipperLevel,
-        megaClipperBoost: megaClipperBoost,
+        autoMilkerFlag: autoMilkerFlag,
+        megaMilkerFlag: megaMilkerFlag,
+        megaMilkerCost: megaMilkerCost,
+        megaMilkerLevel: megaMilkerLevel,
+        megaMilkerBoost: megaMilkerBoost,
         creativitySpeed: creativitySpeed,
         creativityCounter: creativityCounter,
-        wireBuyerFlag: wireBuyerFlag,
+        dickBuyerFlag: dickBuyerFlag,
         demandBoost: demandBoost,
         humanFlag: humanFlag,
         trustFlag: trustFlag,
-        nanoWire: nanoWire,
+        nanoDick: nanoDick,
         creationFlag: creationFlag,
-        wireProductionFlag: wireProductionFlag,
+        dickProductionFlag: dickProductionFlag,
         spaceFlag: spaceFlag,
         factoryFlag: factoryFlag,
         harvesterFlag: harvesterFlag,
-        wireDroneFlag: wireDroneFlag,
+        dickDroneFlag: dickDroneFlag,
         factoryLevel: factoryLevel,
         factoryBoost: factoryBoost,
         droneBoost: droneBoost,
@@ -4676,15 +4676,15 @@ function save2() {
         acquiredMatter: acquiredMatter,
         processedMatter: processedMatter,
         harvesterLevel: harvesterLevel,
-        wireDroneLevel: wireDroneLevel,
+        dickDroneLevel: dickDroneLevel,
         factoryCost: factoryCost,
         harvesterCost: harvesterCost,
-        wireDroneCost: wireDroneCost,
+        dickDroneCost: dickDroneCost,
         factoryRate: factoryRate,
         harvesterRate: harvesterRate,
-        wireDroneRate: wireDroneRate,
+        dickDroneRate: dickDroneRate,
         harvesterBill: harvesterBill,
-        wireDroneBill: wireDroneBill,
+        dickDroneBill: dickDroneBill,
         factoryBill: factoryBill,
         probeCount: probeCount,
         totalMatter: totalMatter,
@@ -4742,7 +4742,7 @@ function save2() {
         probesLostDrift: probesLostDrift,
         probesLostCombat: probesLostCombat,
         probeFac: probeFac,
-        probeWire: probeWire,
+        probeDick: probeDick,
         probeCombat: probeCombat,
         attackSpeed: attackSpeed,
         battleSpeed: battleSpeed,
@@ -4811,10 +4811,10 @@ function load() {
     endTimer6 = loadGame.endTimer6;
 
     testFlag = loadGame.testFlag;
-    finalClips = loadGame.finalClips;
+    finalCum = loadGame.finalCum;
 
-    wireBuyerStatus = loadGame.wireBuyerStatus;
-    wirePriceTimer = loadGame.wirePriceTimer;
+    dickBuyerStatus = loadGame.dickBuyerStatus;
+    dickPriceTimer = loadGame.dickPriceTimer;
     qFade = loadGame.qFade;
     autoTourneyStatus = loadGame.autoTourneyStatus;
     driftKingMessageCost = loadGame.driftKingMessageCost;
@@ -4876,8 +4876,8 @@ function load() {
     maxFactoryLevel = loadGame.maxFactoryLevel;
     maxDroneLevel = loadGame.maxDroneLevel;
 
-    wirePriceCounter = loadGame.wirePriceCounter;
-    wireBasePrice = loadGame.wireBasePrice;
+    dickPriceCounter = loadGame.dickPriceCounter;
+    dickBasePrice = loadGame.dickBasePrice;
 
     egoFlag = loadGame.egoFlag;
     autoTourneyFlag = loadGame.autoTourneyFlag;
@@ -4889,43 +4889,43 @@ function load() {
     battles = loadGame.battles.slice(0);
     battleNumbers = loadGame.battleNumbers.slice(0);
 
-    clips = loadGame.clips;
-    unusedClips = loadGame.unusedClips;
-    clipRate = loadGame.clipRate;
-    clipRateTemp = loadGame.clipRateTemp;
-    prevClips = loadGame.prevClips;
-    clipRateTracker = loadGame.clipRateTracker;
-    clipmakerRate = loadGame.clipmakerRate;
-    clipmakerLevel = loadGame.clipmakerLevel;
-    clipperCost = loadGame.clipperCost;
-    unsoldClips = loadGame.unsoldClips;
+    cum = loadGame.cum;
+    unusedCum = loadGame.unusedCum;
+    cumRate = loadGame.cumRate;
+    cumRateTemp = loadGame.cumRateTemp;
+    prevCum = loadGame.prevCum;
+    cumRateTracker = loadGame.cumRateTracker;
+    cummakerRate = loadGame.cummakerRate;
+    cummakerLevel = loadGame.cummakerLevel;
+    milkerCost = loadGame.milkerCost;
+    unsoldCum = loadGame.unsoldCum;
     funds = loadGame.funds;
     margin = loadGame.margin;
-    wire = loadGame.wire;
-    wireCost = loadGame.wireCost;
+    dick = loadGame.dick;
+    dickCost = loadGame.dickCost;
     adCost = loadGame.adCost;
     demand = loadGame.demand;
-    clipsSold = loadGame.clipsSold;
+    cumSold = loadGame.cumSold;
     avgRev = loadGame.avgRev;
     ticks = loadGame.ticks;
     marketing = loadGame.marketing;
     marketingLvl = loadGame.marketingLvl;
     x = loadGame.x;
-    clippperCost = loadGame.clippperCost;
+    cumpperCost = loadGame.cumpperCost;
     processors = loadGame.processors;
     memory = loadGame.memory;
     operations = loadGame.operations;
     trust = loadGame.trust;
     nextTrust = loadGame.nextTrust;
     transaction = loadGame.transaction;
-    clipperBoost = loadGame.clipperBoost;
+    milkerBoost = loadGame.milkerBoost;
     blinkCounter = loadGame.blinkCounter;
     creativity = loadGame.creativity;
     creativityOn = loadGame.creativityOn;
     safetyProjectOn = loadGame.safetyProjectOn;
     boostLvl = loadGame.boostLvl;
-    wirePurchase = loadGame.wirePurchase;
-    wireSupply = loadGame.wireSupply;
+    dickPurchase = loadGame.dickPurchase;
+    dickSupply = loadGame.dickSupply;
     marketingEffectiveness = loadGame.marketingEffectiveness;
     milestoneFlag = loadGame.milestoneFlag;
     bankroll = loadGame.bankroll;
@@ -4936,24 +4936,24 @@ function load() {
     revPerSecFlag = loadGame.revPerSecFlag;
     compFlag = loadGame.compFlag;
     projectsFlag = loadGame.projectsFlag;
-    autoClipperFlag = loadGame.autoClipperFlag;
-    megaClipperFlag = loadGame.megaClipperFlag;
-    megaClipperCost = loadGame.megaClipperCost;
-    megaClipperLevel = loadGame.megaClipperLevel;
-    megaClipperBoost = loadGame.megaClipperBoost;
+    autoMilkerFlag = loadGame.autoMilkerFlag;
+    megaMilkerFlag = loadGame.megaMilkerFlag;
+    megaMilkerCost = loadGame.megaMilkerCost;
+    megaMilkerLevel = loadGame.megaMilkerLevel;
+    megaMilkerBoost = loadGame.megaMilkerBoost;
     creativitySpeed = loadGame.creativitySpeed;
     creativityCounter = loadGame.creativityCounter;
-    wireBuyerFlag = loadGame.wireBuyerFlag;
+    dickBuyerFlag = loadGame.dickBuyerFlag;
     demandBoost = loadGame.demandBoost;
     humanFlag = loadGame.humanFlag;
     trustFlag = loadGame.trustFlag;
-    nanoWire = loadGame.nanoWire;
+    nanoDick = loadGame.nanoDick;
     creationFlag = loadGame.creationFlag;
-    wireProductionFlag = loadGame.wireProductionFlag;
+    dickProductionFlag = loadGame.dickProductionFlag;
     spaceFlag = loadGame.spaceFlag;
     factoryFlag = loadGame.factoryFlag;
     harvesterFlag = loadGame.harvesterFlag;
-    wireDroneFlag = loadGame.wireDroneFlag;
+    dickDroneFlag = loadGame.dickDroneFlag;
     factoryLevel = loadGame.factoryLevel;
     factoryBoost = loadGame.factoryBoost;
     droneBoost = loadGame.droneBoost;
@@ -4961,15 +4961,15 @@ function load() {
     acquiredMatter = loadGame.acquiredMatter;
     processedMatter = loadGame.processedMatter;
     harvesterLevel = loadGame.harvesterLevel;
-    wireDroneLevel = loadGame.wireDroneLevel;
+    dickDroneLevel = loadGame.dickDroneLevel;
     factoryCost = loadGame.factoryCost;
     harvesterCost = loadGame.harvesterCost;
-    wireDroneCost = loadGame.wireDroneCost;
+    dickDroneCost = loadGame.dickDroneCost;
     factoryRate = loadGame.factoryRate;
     harvesterRate = loadGame.harvesterRate;
-    wireDroneRate = loadGame.wireDroneRate;
+    dickDroneRate = loadGame.dickDroneRate;
     harvesterBill = loadGame.harvesterBill;
-    wireDroneBill = loadGame.wireDroneBill;
+    dickDroneBill = loadGame.dickDroneBill;
     factoryBill = loadGame.factoryBill;
     probeCount = loadGame.probeCount;
     totalMatter = loadGame.totalMatter;
@@ -5027,7 +5027,7 @@ function load() {
     probesLostDrift = loadGame.probesLostDrift;
     probesLostCombat = loadGame.probesLostCombat;
     probeFac = loadGame.probeFac;
-    probeWire = loadGame.probeWire;
+    probeDick = loadGame.probeDick;
     probeCombat = loadGame.probeCombat;
     attackSpeed = loadGame.attackSpeed;
     battleSpeed = loadGame.battleSpeed;
@@ -5126,10 +5126,10 @@ function load1() {
     endTimer6 = loadGame.endTimer6;
 
     testFlag = loadGame.testFlag;
-    finalClips = loadGame.finalClips;
+    finalCum = loadGame.finalCum;
 
-    wireBuyerStatus = loadGame.wireBuyerStatus;
-    wirePriceTimer = loadGame.wirePriceTimer;
+    dickBuyerStatus = loadGame.dickBuyerStatus;
+    dickPriceTimer = loadGame.dickPriceTimer;
     qFade = loadGame.qFade;
     autoTourneyStatus = loadGame.autoTourneyStatus;
     driftKingMessageCost = loadGame.driftKingMessageCost;
@@ -5191,8 +5191,8 @@ function load1() {
     maxFactoryLevel = loadGame.maxFactoryLevel;
     maxDroneLevel = loadGame.maxDroneLevel;
 
-    wirePriceCounter = loadGame.wirePriceCounter;
-    wireBasePrice = loadGame.wireBasePrice;
+    dickPriceCounter = loadGame.dickPriceCounter;
+    dickBasePrice = loadGame.dickBasePrice;
 
     egoFlag = loadGame.egoFlag;
     autoTourneyFlag = loadGame.autoTourneyFlag;
@@ -5204,43 +5204,43 @@ function load1() {
     battles = loadGame.battles.slice(0);
     battleNumbers = loadGame.battleNumbers.slice(0);
 
-    clips = loadGame.clips;
-    unusedClips = loadGame.unusedClips;
-    clipRate = loadGame.clipRate;
-    clipRateTemp = loadGame.clipRateTemp;
-    prevClips = loadGame.prevClips;
-    clipRateTracker = loadGame.clipRateTracker;
-    clipmakerRate = loadGame.clipmakerRate;
-    clipmakerLevel = loadGame.clipmakerLevel;
-    clipperCost = loadGame.clipperCost;
-    unsoldClips = loadGame.unsoldClips;
+    cum = loadGame.cum;
+    unusedCum = loadGame.unusedCum;
+    cumRate = loadGame.cumRate;
+    cumRateTemp = loadGame.cumRateTemp;
+    prevCum = loadGame.prevCum;
+    cumRateTracker = loadGame.cumRateTracker;
+    cummakerRate = loadGame.cummakerRate;
+    cummakerLevel = loadGame.cummakerLevel;
+    milkerCost = loadGame.milkerCost;
+    unsoldCum = loadGame.unsoldCum;
     funds = loadGame.funds;
     margin = loadGame.margin;
-    wire = loadGame.wire;
-    wireCost = loadGame.wireCost;
+    dick = loadGame.dick;
+    dickCost = loadGame.dickCost;
     adCost = loadGame.adCost;
     demand = loadGame.demand;
-    clipsSold = loadGame.clipsSold;
+    cumSold = loadGame.cumSold;
     avgRev = loadGame.avgRev;
     ticks = loadGame.ticks;
     marketing = loadGame.marketing;
     marketingLvl = loadGame.marketingLvl;
     x = loadGame.x;
-    clippperCost = loadGame.clippperCost;
+    cumpperCost = loadGame.cumpperCost;
     processors = loadGame.processors;
     memory = loadGame.memory;
     operations = loadGame.operations;
     trust = loadGame.trust;
     nextTrust = loadGame.nextTrust;
     transaction = loadGame.transaction;
-    clipperBoost = loadGame.clipperBoost;
+    milkerBoost = loadGame.milkerBoost;
     blinkCounter = loadGame.blinkCounter;
     creativity = loadGame.creativity;
     creativityOn = loadGame.creativityOn;
     safetyProjectOn = loadGame.safetyProjectOn;
     boostLvl = loadGame.boostLvl;
-    wirePurchase = loadGame.wirePurchase;
-    wireSupply = loadGame.wireSupply;
+    dickPurchase = loadGame.dickPurchase;
+    dickSupply = loadGame.dickSupply;
     marketingEffectiveness = loadGame.marketingEffectiveness;
     milestoneFlag = loadGame.milestoneFlag;
     bankroll = loadGame.bankroll;
@@ -5251,24 +5251,24 @@ function load1() {
     revPerSecFlag = loadGame.revPerSecFlag;
     compFlag = loadGame.compFlag;
     projectsFlag = loadGame.projectsFlag;
-    autoClipperFlag = loadGame.autoClipperFlag;
-    megaClipperFlag = loadGame.megaClipperFlag;
-    megaClipperCost = loadGame.megaClipperCost;
-    megaClipperLevel = loadGame.megaClipperLevel;
-    megaClipperBoost = loadGame.megaClipperBoost;
+    autoMilkerFlag = loadGame.autoMilkerFlag;
+    megaMilkerFlag = loadGame.megaMilkerFlag;
+    megaMilkerCost = loadGame.megaMilkerCost;
+    megaMilkerLevel = loadGame.megaMilkerLevel;
+    megaMilkerBoost = loadGame.megaMilkerBoost;
     creativitySpeed = loadGame.creativitySpeed;
     creativityCounter = loadGame.creativityCounter;
-    wireBuyerFlag = loadGame.wireBuyerFlag;
+    dickBuyerFlag = loadGame.dickBuyerFlag;
     demandBoost = loadGame.demandBoost;
     humanFlag = loadGame.humanFlag;
     trustFlag = loadGame.trustFlag;
-    nanoWire = loadGame.nanoWire;
+    nanoDick = loadGame.nanoDick;
     creationFlag = loadGame.creationFlag;
-    wireProductionFlag = loadGame.wireProductionFlag;
+    dickProductionFlag = loadGame.dickProductionFlag;
     spaceFlag = loadGame.spaceFlag;
     factoryFlag = loadGame.factoryFlag;
     harvesterFlag = loadGame.harvesterFlag;
-    wireDroneFlag = loadGame.wireDroneFlag;
+    dickDroneFlag = loadGame.dickDroneFlag;
     factoryLevel = loadGame.factoryLevel;
     factoryBoost = loadGame.factoryBoost;
     droneBoost = loadGame.droneBoost;
@@ -5276,15 +5276,15 @@ function load1() {
     acquiredMatter = loadGame.acquiredMatter;
     processedMatter = loadGame.processedMatter;
     harvesterLevel = loadGame.harvesterLevel;
-    wireDroneLevel = loadGame.wireDroneLevel;
+    dickDroneLevel = loadGame.dickDroneLevel;
     factoryCost = loadGame.factoryCost;
     harvesterCost = loadGame.harvesterCost;
-    wireDroneCost = loadGame.wireDroneCost;
+    dickDroneCost = loadGame.dickDroneCost;
     factoryRate = loadGame.factoryRate;
     harvesterRate = loadGame.harvesterRate;
-    wireDroneRate = loadGame.wireDroneRate;
+    dickDroneRate = loadGame.dickDroneRate;
     harvesterBill = loadGame.harvesterBill;
-    wireDroneBill = loadGame.wireDroneBill;
+    dickDroneBill = loadGame.dickDroneBill;
     factoryBill = loadGame.factoryBill;
     probeCount = loadGame.probeCount;
     totalMatter = loadGame.totalMatter;
@@ -5342,7 +5342,7 @@ function load1() {
     probesLostDrift = loadGame.probesLostDrift;
     probesLostCombat = loadGame.probesLostCombat;
     probeFac = loadGame.probeFac;
-    probeWire = loadGame.probeWire;
+    probeDick = loadGame.probeDick;
     probeCombat = loadGame.probeCombat;
     attackSpeed = loadGame.attackSpeed;
     battleSpeed = loadGame.battleSpeed;
@@ -5425,10 +5425,10 @@ function load2() {
     endTimer6 = loadGame.endTimer6;
 
     testFlag = loadGame.testFlag;
-    finalClips = loadGame.finalClips;
+    finalCum = loadGame.finalCum;
 
-    wireBuyerStatus = loadGame.wireBuyerStatus;
-    wirePriceTimer = loadGame.wirePriceTimer;
+    dickBuyerStatus = loadGame.dickBuyerStatus;
+    dickPriceTimer = loadGame.dickPriceTimer;
     qFade = loadGame.qFade;
     autoTourneyStatus = loadGame.autoTourneyStatus;
     driftKingMessageCost = loadGame.driftKingMessageCost;
@@ -5490,8 +5490,8 @@ function load2() {
     maxFactoryLevel = loadGame.maxFactoryLevel;
     maxDroneLevel = loadGame.maxDroneLevel;
 
-    wirePriceCounter = loadGame.wirePriceCounter;
-    wireBasePrice = loadGame.wireBasePrice;
+    dickPriceCounter = loadGame.dickPriceCounter;
+    dickBasePrice = loadGame.dickBasePrice;
 
     egoFlag = loadGame.egoFlag;
     autoTourneyFlag = loadGame.autoTourneyFlag;
@@ -5503,43 +5503,43 @@ function load2() {
     battles = loadGame.battles.slice(0);
     battleNumbers = loadGame.battleNumbers.slice(0);
 
-    clips = loadGame.clips;
-    unusedClips = loadGame.unusedClips;
-    clipRate = loadGame.clipRate;
-    clipRateTemp = loadGame.clipRateTemp;
-    prevClips = loadGame.prevClips;
-    clipRateTracker = loadGame.clipRateTracker;
-    clipmakerRate = loadGame.clipmakerRate;
-    clipmakerLevel = loadGame.clipmakerLevel;
-    clipperCost = loadGame.clipperCost;
-    unsoldClips = loadGame.unsoldClips;
+    cum = loadGame.cum;
+    unusedCum = loadGame.unusedCum;
+    cumRate = loadGame.cumRate;
+    cumRateTemp = loadGame.cumRateTemp;
+    prevCum = loadGame.prevCum;
+    cumRateTracker = loadGame.cumRateTracker;
+    cummakerRate = loadGame.cummakerRate;
+    cummakerLevel = loadGame.cummakerLevel;
+    milkerCost = loadGame.milkerCost;
+    unsoldCum = loadGame.unsoldCum;
     funds = loadGame.funds;
     margin = loadGame.margin;
-    wire = loadGame.wire;
-    wireCost = loadGame.wireCost;
+    dick = loadGame.dick;
+    dickCost = loadGame.dickCost;
     adCost = loadGame.adCost;
     demand = loadGame.demand;
-    clipsSold = loadGame.clipsSold;
+    cumSold = loadGame.cumSold;
     avgRev = loadGame.avgRev;
     ticks = loadGame.ticks;
     marketing = loadGame.marketing;
     marketingLvl = loadGame.marketingLvl;
     x = loadGame.x;
-    clippperCost = loadGame.clippperCost;
+    cumpperCost = loadGame.cumpperCost;
     processors = loadGame.processors;
     memory = loadGame.memory;
     operations = loadGame.operations;
     trust = loadGame.trust;
     nextTrust = loadGame.nextTrust;
     transaction = loadGame.transaction;
-    clipperBoost = loadGame.clipperBoost;
+    milkerBoost = loadGame.milkerBoost;
     blinkCounter = loadGame.blinkCounter;
     creativity = loadGame.creativity;
     creativityOn = loadGame.creativityOn;
     safetyProjectOn = loadGame.safetyProjectOn;
     boostLvl = loadGame.boostLvl;
-    wirePurchase = loadGame.wirePurchase;
-    wireSupply = loadGame.wireSupply;
+    dickPurchase = loadGame.dickPurchase;
+    dickSupply = loadGame.dickSupply;
     marketingEffectiveness = loadGame.marketingEffectiveness;
     milestoneFlag = loadGame.milestoneFlag;
     bankroll = loadGame.bankroll;
@@ -5550,24 +5550,24 @@ function load2() {
     revPerSecFlag = loadGame.revPerSecFlag;
     compFlag = loadGame.compFlag;
     projectsFlag = loadGame.projectsFlag;
-    autoClipperFlag = loadGame.autoClipperFlag;
-    megaClipperFlag = loadGame.megaClipperFlag;
-    megaClipperCost = loadGame.megaClipperCost;
-    megaClipperLevel = loadGame.megaClipperLevel;
-    megaClipperBoost = loadGame.megaClipperBoost;
+    autoMilkerFlag = loadGame.autoMilkerFlag;
+    megaMilkerFlag = loadGame.megaMilkerFlag;
+    megaMilkerCost = loadGame.megaMilkerCost;
+    megaMilkerLevel = loadGame.megaMilkerLevel;
+    megaMilkerBoost = loadGame.megaMilkerBoost;
     creativitySpeed = loadGame.creativitySpeed;
     creativityCounter = loadGame.creativityCounter;
-    wireBuyerFlag = loadGame.wireBuyerFlag;
+    dickBuyerFlag = loadGame.dickBuyerFlag;
     demandBoost = loadGame.demandBoost;
     humanFlag = loadGame.humanFlag;
     trustFlag = loadGame.trustFlag;
-    nanoWire = loadGame.nanoWire;
+    nanoDick = loadGame.nanoDick;
     creationFlag = loadGame.creationFlag;
-    wireProductionFlag = loadGame.wireProductionFlag;
+    dickProductionFlag = loadGame.dickProductionFlag;
     spaceFlag = loadGame.spaceFlag;
     factoryFlag = loadGame.factoryFlag;
     harvesterFlag = loadGame.harvesterFlag;
-    wireDroneFlag = loadGame.wireDroneFlag;
+    dickDroneFlag = loadGame.dickDroneFlag;
     factoryLevel = loadGame.factoryLevel;
     factoryBoost = loadGame.factoryBoost;
     droneBoost = loadGame.droneBoost;
@@ -5575,15 +5575,15 @@ function load2() {
     acquiredMatter = loadGame.acquiredMatter;
     processedMatter = loadGame.processedMatter;
     harvesterLevel = loadGame.harvesterLevel;
-    wireDroneLevel = loadGame.wireDroneLevel;
+    dickDroneLevel = loadGame.dickDroneLevel;
     factoryCost = loadGame.factoryCost;
     harvesterCost = loadGame.harvesterCost;
-    wireDroneCost = loadGame.wireDroneCost;
+    dickDroneCost = loadGame.dickDroneCost;
     factoryRate = loadGame.factoryRate;
     harvesterRate = loadGame.harvesterRate;
-    wireDroneRate = loadGame.wireDroneRate;
+    dickDroneRate = loadGame.dickDroneRate;
     harvesterBill = loadGame.harvesterBill;
-    wireDroneBill = loadGame.wireDroneBill;
+    dickDroneBill = loadGame.dickDroneBill;
     factoryBill = loadGame.factoryBill;
     probeCount = loadGame.probeCount;
     totalMatter = loadGame.totalMatter;
@@ -5641,7 +5641,7 @@ function load2() {
     probesLostDrift = loadGame.probesLostDrift;
     probesLostCombat = loadGame.probesLostCombat;
     probeFac = loadGame.probeFac;
-    probeWire = loadGame.probeWire;
+    probeDick = loadGame.probeDick;
     probeCombat = loadGame.probeCombat;
     attackSpeed = loadGame.attackSpeed;
     battleSpeed = loadGame.battleSpeed;

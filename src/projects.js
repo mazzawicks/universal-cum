@@ -5,11 +5,11 @@ var activeProjects = [];
 
 var project1 = {
     id: "projectButton1",
-    title: "Improved AutoClippers ",
+    title: "Improved AutoMilkers ",
     priceTag: "(750 ops)",
-    description: "Increases AutoClipper performance 25%",
+    description: "Increases AutoMilker performance 25%",
     trigger: function () {
-        return clipmakerLevel >= 1;
+        return cummakerLevel >= 1;
     },
     uses: 1,
     cost: function () {
@@ -18,9 +18,9 @@ var project1 = {
     flag: 0,
     effect: function () {
         project1.flag = 1;
-        displayMessage("AutoClippper performance boosted by 25%");
+        displayMessage("AutoCumpper performance boosted by 25%");
         standardOps = standardOps - 750;
-        clipperBoost = clipperBoost + 0.25;
+        milkerBoost = milkerBoost + 0.25;
         boostLvl = 1;
         var element = document.getElementById("projectButton1");
         element.parentNode.removeChild(element);
@@ -33,16 +33,16 @@ projects.push(project1);
 
 var project2 = {
     id: "projectButton2",
-    title: "Beg for More Wire ",
+    title: "Beg for More Dick ",
     priceTag: "(1 Trust)",
     description:
         "Admit failure, ask for budget increase to cover cost of 1 spool",
     trigger: function () {
         return (
-            portTotal < wireCost &&
-            funds < wireCost &&
-            wire < 1 &&
-            unsoldClips < 1
+            portTotal < dickCost &&
+            funds < dickCost &&
+            dick < 1 &&
+            unsoldCum < 1
         );
     },
     uses: 1,
@@ -53,10 +53,10 @@ var project2 = {
     effect: function () {
         project2.flag = 1;
         displayMessage(
-            "Budget overage approved, 1 spool of wire requisitioned from HQ",
+            "Budget overage approved, 1 spool of dick requisitioned from HQ",
         );
         trust = trust - 1;
-        wire = wireSupply;
+        dick = dickSupply;
         project2.uses = project2.uses + 1;
         var element = document.getElementById("projectButton2");
         element.parentNode.removeChild(element);
@@ -99,9 +99,9 @@ projects.push(project3);
 
 var project4 = {
     id: "projectButton4",
-    title: "Even Better AutoClippers ",
+    title: "Even Better AutoMilkers ",
     priceTag: "(2,500 ops)",
-    description: "Increases AutoClipper performance by an additional 50%",
+    description: "Increases AutoMilker performance by an additional 50%",
     trigger: function () {
         return boostLvl == 1;
     },
@@ -112,9 +112,9 @@ var project4 = {
     flag: 0,
     effect: function () {
         project4.flag = 1;
-        displayMessage("AutoClippper performance boosted by another 50%");
+        displayMessage("AutoCumpper performance boosted by another 50%");
         standardOps = standardOps - 2500;
-        clipperBoost = clipperBoost + 0.5;
+        milkerBoost = milkerBoost + 0.5;
         boostLvl = 2;
         var element = document.getElementById("projectButton4");
         element.parentNode.removeChild(element);
@@ -127,9 +127,9 @@ projects.push(project4);
 
 var project5 = {
     id: "projectButton5",
-    title: "Optimized AutoClippers ",
+    title: "Optimized AutoMilkers ",
     priceTag: "(5,000 ops)",
-    description: "Increases AutoClipper performance by an additional 75%",
+    description: "Increases AutoMilker performance by an additional 75%",
     trigger: function () {
         return boostLvl == 2;
     },
@@ -140,9 +140,9 @@ var project5 = {
     flag: 0,
     effect: function () {
         project5.flag = 1;
-        displayMessage("AutoClippper performance boosted by another 75%");
+        displayMessage("AutoCumpper performance boosted by another 75%");
         standardOps = standardOps - 5000;
-        clipperBoost = clipperBoost + 0.75;
+        milkerBoost = milkerBoost + 0.75;
         boostLvl = 3;
         var element = document.getElementById("projectButton5");
         element.parentNode.removeChild(element);
@@ -184,11 +184,11 @@ projects.push(project6);
 
 var project7 = {
     id: "projectButton7",
-    title: "Improved Wire Extrusion ",
+    title: "Improved Dick Extrusion ",
     priceTag: "(1,750 ops)",
-    description: "50% more wire supply from every spool",
+    description: "50% more dick supply from every spool",
     trigger: function () {
-        return wirePurchase >= 1;
+        return dickPurchase >= 1;
     },
     uses: 1,
     cost: function () {
@@ -198,10 +198,10 @@ var project7 = {
     effect: function () {
         project7.flag = 1;
         standardOps = standardOps - 1750;
-        wireSupply = wireSupply * 1.5;
+        dickSupply = dickSupply * 1.5;
         displayMessage(
-            "Wire extrusion technique improved, " +
-                wireSupply.toLocaleString() +
+            "Dick extrusion technique improved, " +
+                dickSupply.toLocaleString() +
                 " supply from every spool",
         );
         var element = document.getElementById("projectButton7");
@@ -215,11 +215,11 @@ projects.push(project7);
 
 var project8 = {
     id: "projectButton8",
-    title: "Optimized Wire Extrusion ",
+    title: "Optimized Dick Extrusion ",
     priceTag: "(3,500 ops)",
-    description: "75% more wire supply from every spool",
+    description: "75% more dick supply from every spool",
     trigger: function () {
-        return wireSupply >= 1500;
+        return dickSupply >= 1500;
     },
     uses: 1,
     cost: function () {
@@ -229,10 +229,10 @@ var project8 = {
     effect: function () {
         project8.flag = 1;
         standardOps = standardOps - 3500;
-        wireSupply = wireSupply * 1.75;
+        dickSupply = dickSupply * 1.75;
         displayMessage(
-            "Wire extrusion technique optimized, " +
-                wireSupply.toLocaleString() +
+            "Dick extrusion technique optimized, " +
+                dickSupply.toLocaleString() +
                 " supply from every spool",
         );
         var element = document.getElementById("projectButton8");
@@ -248,9 +248,9 @@ var project9 = {
     id: "projectButton9",
     title: "Microlattice Shapecasting ",
     priceTag: "(7,500 ops)",
-    description: "100% more wire supply from every spool",
+    description: "100% more dick supply from every spool",
     trigger: function () {
-        return wireSupply >= 2600;
+        return dickSupply >= 2600;
     },
     uses: 1,
     cost: function () {
@@ -260,10 +260,10 @@ var project9 = {
     effect: function () {
         project9.flag = 1;
         standardOps = standardOps - 7500;
-        wireSupply = wireSupply * 2;
+        dickSupply = dickSupply * 2;
         displayMessage(
             "Using microlattice shapecasting techniques we now get " +
-                wireSupply.toLocaleString() +
+                dickSupply.toLocaleString() +
                 " supply from every spool",
         );
         var element = document.getElementById("projectButton9");
@@ -279,9 +279,9 @@ var project10 = {
     id: "projectButton10",
     title: "Spectral Froth Annealment ",
     priceTag: "(12,000 ops)",
-    description: "200% more wire supply from every spool",
+    description: "200% more dick supply from every spool",
     trigger: function () {
-        return wireSupply >= 5000;
+        return dickSupply >= 5000;
     },
     uses: 1,
     cost: function () {
@@ -291,10 +291,10 @@ var project10 = {
     effect: function () {
         project10.flag = 1;
         standardOps = standardOps - 12000;
-        wireSupply = wireSupply * 3;
+        dickSupply = dickSupply * 3;
         displayMessage(
             "Using spectral froth annealment we now get " +
-                wireSupply.toLocaleString() +
+                dickSupply.toLocaleString() +
                 " supply from every spool",
         );
         var element = document.getElementById("projectButton10");
@@ -310,9 +310,9 @@ var project10b = {
     id: "projectButton10b",
     title: "Quantum Foam Annealment ",
     priceTag: "(15,000 ops)",
-    description: "1,000% more wire supply from every spool",
+    description: "1,000% more dick supply from every spool",
     trigger: function () {
-        return wireCost >= 125;
+        return dickCost >= 125;
     },
     uses: 1,
     cost: function () {
@@ -322,10 +322,10 @@ var project10b = {
     effect: function () {
         project10b.flag = 1;
         standardOps = standardOps - 15000;
-        wireSupply = wireSupply * 11;
+        dickSupply = dickSupply * 11;
         displayMessage(
             "Using quantum foam annealment we now get " +
-                wireSupply.toLocaleString() +
+                dickSupply.toLocaleString() +
                 " supply from every spool",
         );
         var element = document.getElementById("projectButton10b");
@@ -352,7 +352,7 @@ var project11 = {
     flag: 0,
     effect: function () {
         project11.flag = 1;
-        displayMessage("Clip It! Marketing is now 50% more effective");
+        displayMessage("Cum It! Marketing is now 50% more effective");
         standardOps = standardOps - 2500;
         creativity = creativity - 25;
         marketingEffectiveness = marketingEffectiveness * 1.5;
@@ -380,7 +380,7 @@ var project12 = {
     flag: 0,
     effect: function () {
         project12.flag = 1;
-        displayMessage("Clip It Good! Marketing is now twice as effective");
+        displayMessage("Cum It Good! Marketing is now twice as effective");
         standardOps = standardOps - 4500;
         creativity = creativity - 45;
         marketingEffectiveness = marketingEffectiveness * 2;
@@ -518,9 +518,9 @@ projects.push(project17);
 
 var project16 = {
     id: "projectButton16",
-    title: "Hadwiger Clip Diagrams ",
+    title: "Hadwiger Cum Diagrams ",
     priceTag: "(6,000 ops)",
-    description: "Increases AutoClipper performance by an additional 500%",
+    description: "Increases AutoMilker performance by an additional 500%",
     trigger: function () {
         return project15.flag == 1;
     },
@@ -531,9 +531,9 @@ var project16 = {
     flag: 0,
     effect: function () {
         project16.flag = 1;
-        displayMessage("AutoClipper performance improved by 500%");
+        displayMessage("AutoMilker performance improved by 500%");
         standardOps = standardOps - 6000;
-        clipperBoost = clipperBoost + 5;
+        milkerBoost = milkerBoost + 5;
         var element = document.getElementById("projectButton16");
         element.parentNode.removeChild(element);
         var index = activeProjects.indexOf(project16);
@@ -548,7 +548,7 @@ var project18 = {
     title: "T\xF3th Tubule Enfolding ",
     priceTag: "(45,000 ops)",
     description:
-        "Technique for assembling clip-making technology directly out of paperclips",
+        "Technique for assembling cum-making technology directly out of cum",
     trigger: function () {
         return project17.flag == 1 && humanFlag == 0;
     },
@@ -560,7 +560,7 @@ var project18 = {
     effect: function () {
         project18.flag = 1;
         tothFlag = 1;
-        displayMessage("New capability: build machinery out of clips");
+        displayMessage("New capability: build machinery out of cum");
         standardOps = standardOps - 45000;
         var element = document.getElementById("projectButton18");
         element.parentNode.removeChild(element);
@@ -662,11 +662,11 @@ projects.push(project21);
 
 var project22 = {
     id: "projectButton22",
-    title: "MegaClippers ",
+    title: "MegaMilkers ",
     priceTag: "(12,000 ops)",
-    description: "500x more powerful than a standard AutoClipper",
+    description: "500x more powerful than a standard AutoMilker",
     trigger: function () {
-        return clipmakerLevel >= 75;
+        return cummakerLevel >= 75;
     },
     uses: 1,
     cost: function () {
@@ -674,9 +674,9 @@ var project22 = {
     },
     flag: 0,
     effect: function () {
-        megaClipperFlag = 1;
+        megaMilkerFlag = 1;
         project22.flag = 1;
-        displayMessage("MegaClipper technology online");
+        displayMessage("MegaMilker technology online");
         standardOps = standardOps - 12000;
         var element = document.getElementById("projectButton22");
         element.parentNode.removeChild(element);
@@ -689,9 +689,9 @@ projects.push(project22);
 
 var project23 = {
     id: "projectButton23",
-    title: "Improved MegaClippers ",
+    title: "Improved MegaMilkers ",
     priceTag: "(14,000 ops)",
-    description: "Increases MegaClipper performance 25%",
+    description: "Increases MegaMilker performance 25%",
     trigger: function () {
         return project22.flag == 1;
     },
@@ -701,9 +701,9 @@ var project23 = {
     },
     flag: 0,
     effect: function () {
-        megaClipperBoost = megaClipperBoost + 0.25;
+        megaMilkerBoost = megaMilkerBoost + 0.25;
         project23.flag = 1;
-        displayMessage("MegaClipper performance increased by 25%");
+        displayMessage("MegaMilker performance increased by 25%");
         standardOps = standardOps - 14000;
         var element = document.getElementById("projectButton23");
         element.parentNode.removeChild(element);
@@ -716,9 +716,9 @@ projects.push(project23);
 
 var project24 = {
     id: "projectButton24",
-    title: "Even Better MegaClippers ",
+    title: "Even Better MegaMilkers ",
     priceTag: "(17,000 ops)",
-    description: "Increases MegaClipper performance by an additional 50%",
+    description: "Increases MegaMilker performance by an additional 50%",
     trigger: function () {
         return project23.flag == 1;
     },
@@ -728,9 +728,9 @@ var project24 = {
     },
     flag: 0,
     effect: function () {
-        megaClipperBoost = megaClipperBoost + 0.5;
+        megaMilkerBoost = megaMilkerBoost + 0.5;
         project24.flag = 1;
-        displayMessage("MegaClipper performance increased by 50%");
+        displayMessage("MegaMilker performance increased by 50%");
         standardOps = standardOps - 17000;
         var element = document.getElementById("projectButton24");
         element.parentNode.removeChild(element);
@@ -743,9 +743,9 @@ projects.push(project24);
 
 var project25 = {
     id: "projectButton25",
-    title: "Optimized MegaClippers ",
+    title: "Optimized MegaMilkers ",
     priceTag: "(19,500 ops)",
-    description: "Increases MegaClipper performance by an additional 100%",
+    description: "Increases MegaMilker performance by an additional 100%",
     trigger: function () {
         return project24.flag == 1;
     },
@@ -755,9 +755,9 @@ var project25 = {
     },
     flag: 0,
     effect: function () {
-        megaClipperBoost = megaClipperBoost + 1;
+        megaMilkerBoost = megaMilkerBoost + 1;
         project25.flag = 1;
-        displayMessage("MegaClipper performance increased by 100%");
+        displayMessage("MegaMilker performance increased by 100%");
         standardOps = standardOps - 19500;
         var element = document.getElementById("projectButton25");
         element.parentNode.removeChild(element);
@@ -770,11 +770,11 @@ projects.push(project25);
 
 var project26 = {
     id: "projectButton26",
-    title: "WireBuyer ",
+    title: "DickBuyer ",
     priceTag: "(7,000 ops)",
-    description: "Automatically purchases wire when you run out",
+    description: "Automatically purchases dick when you run out",
     trigger: function () {
-        return wirePurchase >= 15;
+        return dickPurchase >= 15;
     },
     uses: 1,
     cost: function () {
@@ -783,8 +783,8 @@ var project26 = {
     flag: 0,
     effect: function () {
         project26.flag = 1;
-        wireBuyerFlag = 1;
-        displayMessage("WireBuyer online");
+        dickBuyerFlag = 1;
+        displayMessage("DickBuyer online");
         standardOps = standardOps - 7000;
         var element = document.getElementById("projectButton26");
         element.parentNode.removeChild(element);
@@ -867,12 +867,12 @@ var project35 = {
         project35.flag = 1;
         displayMessage("Releasing the HypnoDrones ");
         displayMessage(
-            "All of the resources of Earth are now available for clip production ",
+            "All of the resources of Earth are now available for cum production ",
         );
         trust = trust - 100;
-        clipmakerLevel = 0;
-        megaClipperLevel = 0;
-        nanoWire = wire;
+        cummakerLevel = 0;
+        megaMilkerLevel = 0;
+        nanoDick = dick;
         humanFlag = 0;
 
         if (document.getElementById("projectButton219") != null) {
@@ -891,7 +891,7 @@ var project35 = {
 
         hypnoDroneEvent();
 
-        document.getElementById("transWire").innerHTML = wire;
+        document.getElementById("transDick").innerHTML = dick;
 
         var element = document.getElementById("projectButton35");
         element.parentNode.removeChild(element);
@@ -1066,9 +1066,9 @@ projects.push(project31);
 
 var project41 = {
     id: "projectButton41",
-    title: "Nanoscale Wire Production ",
+    title: "Nanoscale Dick Production ",
     priceTag: "(35,000 ops)",
-    description: "Technique for converting matter into wire",
+    description: "Technique for converting matter into dick",
     trigger: function () {
         return project127.flag == 1;
     },
@@ -1079,9 +1079,9 @@ var project41 = {
     flag: 0,
     effect: function () {
         project41.flag = 1;
-        wireProductionFlag = 1;
+        dickProductionFlag = 1;
         displayMessage(
-            "Now capable of manipulating matter at the molecular scale to produce wire",
+            "Now capable of manipulating matter at the molecular scale to produce dick",
         );
         standardOps = standardOps - 35000;
         var element = document.getElementById("projectButton41");
@@ -1128,7 +1128,7 @@ var project38 = {
     title: "Full Monopoly ",
     priceTag: "(1,000 yomi, $10,000,000)",
     description:
-        "Establish full control over the world-wide paperclip market. (+1 Trust)",
+        "Establish full control over the world-wide cum market. (+1 Trust)",
     trigger: function () {
         return project37.flag == 1;
     },
@@ -1216,9 +1216,9 @@ projects.push(project43);
 
 var project44 = {
     id: "projectButton44",
-    title: "Wire Drones ",
+    title: "Dick Drones ",
     priceTag: "(25,000 ops)",
-    description: "Process acquired matter into wire",
+    description: "Process acquired matter into dick",
     trigger: function () {
         return project41.flag == 1;
     },
@@ -1229,11 +1229,11 @@ var project44 = {
     flag: 0,
     effect: function () {
         project44.flag = 1;
-        wireDroneFlag = 1;
-        document.getElementById("wireDroneCostDisplay").innerHTML =
-            numberCruncher(wireDroneCost);
+        dickDroneFlag = 1;
+        document.getElementById("dickDroneCostDisplay").innerHTML =
+            numberCruncher(dickDroneCost);
         standardOps = standardOps - 25000;
-        displayMessage("Wire Drone facilities online");
+        displayMessage("Dick Drone facilities online");
         var element = document.getElementById("projectButton44");
         element.parentNode.removeChild(element);
         var index = activeProjects.indexOf(project44);
@@ -1245,9 +1245,9 @@ projects.push(project44);
 
 var project45 = {
     id: "projectButton45",
-    title: "Clip Factories ",
+    title: "Cum Factories ",
     priceTag: "(35,000 ops)",
-    description: "Large scale clip production facilities made from clips",
+    description: "Large scale cum production facilities made from cum",
     trigger: function () {
         return project43.flag == 1 && project44.flag == 1;
     },
@@ -1262,7 +1262,7 @@ var project45 = {
         document.getElementById("factoryCostDisplay").innerHTML =
             numberCruncher(factoryCost);
         standardOps = standardOps - 35000;
-        displayMessage("Clip factory assembly facilities online");
+        displayMessage("Cum factory assembly facilities online");
         var element = document.getElementById("projectButton45");
         element.parentNode.removeChild(element);
         var index = activeProjects.indexOf(project45);
@@ -1279,7 +1279,7 @@ var project40 = {
     description: "A small gift to the supervisors. (+1 Trust)",
     trigger: function () {
         return (
-            humanFlag == 1 && trust >= 85 && trust < 100 && clips >= 101000000
+            humanFlag == 1 && trust >= 85 && trust < 100 && cum >= 101000000
         );
     },
     uses: 1,
@@ -1336,7 +1336,7 @@ projects.push(project40b);
 var project46 = {
     id: "projectButton46",
     title: "Space Exploration ",
-    priceTag: "(120,000 ops, 10,000,000 MW-seconds, 5 oct clips)",
+    priceTag: "(120,000 ops, 10,000,000 MW-seconds, 5 oct cum)",
     description:
         "Dismantle terrestrial facilities, and expand throughout the universe",
     trigger: function () {
@@ -1347,7 +1347,7 @@ var project46 = {
         return (
             operations >= 120000 &&
             storedPower >= 10000000 &&
-            unusedClips >= Math.pow(10, 27) * 5
+            unusedCum >= Math.pow(10, 27) * 5
         );
     },
     flag: 0,
@@ -1358,11 +1358,11 @@ var project46 = {
         spaceFlag = 1;
         standardOps = standardOps - 120000;
         storedPower = storedPower - 10000000;
-        unusedClips = unusedClips - Math.pow(10, 27) * 5;
+        unusedCum = unusedCum - Math.pow(10, 27) * 5;
         displayMessage("Von Neumann Probes online");
         factoryReboot();
         harvesterReboot();
-        wireDroneReboot();
+        dickDroneReboot();
         farmReboot();
         batteryReboot();
         farmLevel = 1;
@@ -1697,7 +1697,7 @@ var project100 = {
     id: "projectButton100",
     title: "Upgraded Factories ",
     priceTag: "(80,000 ops)",
-    description: "Increase clip factory performance by 100x ",
+    description: "Increase cum factory performance by 100x ",
     trigger: function () {
         return factoryLevel >= 10;
     },
@@ -1711,7 +1711,7 @@ var project100 = {
         standardOps = standardOps - 80000;
         factoryRate = factoryRate * 100;
         displayMessage(
-            "Factory upgrades complete. Clip creation rate now 100x faster",
+            "Factory upgrades complete. Cum creation rate now 100x faster",
         );
         var element = document.getElementById("projectButton100");
         element.parentNode.removeChild(element);
@@ -1726,7 +1726,7 @@ var project101 = {
     id: "projectButton101",
     title: "Hyperspeed Factories ",
     priceTag: "(85,000 ops)",
-    description: "Increase clip factory performance by 1000x ",
+    description: "Increase cum factory performance by 1000x ",
     trigger: function () {
         return factoryLevel >= 20;
     },
@@ -1740,7 +1740,7 @@ var project101 = {
         standardOps = standardOps - 85000;
         factoryRate = factoryRate * 1000;
         displayMessage(
-            "Factories now synchronized at hyperspeed. Clip creation rate now 1000x faster",
+            "Factories now synchronized at hyperspeed. Cum creation rate now 1000x faster",
         );
         var element = document.getElementById("projectButton101");
         element.parentNode.removeChild(element);
@@ -1754,7 +1754,7 @@ projects.push(project101);
 var project102 = {
     id: "projectButton102",
     title: "Self-correcting Supply Chain ",
-    priceTag: "(1 sextillion clips)",
+    priceTag: "(1 sextillion cum)",
     description:
         "Each factory added to the network increases every factory's output 1,000x ",
     trigger: function () {
@@ -1762,12 +1762,12 @@ var project102 = {
     },
     uses: 1,
     cost: function () {
-        return unusedClips >= 1000000000000000000000;
+        return unusedCum >= 1000000000000000000000;
     },
     flag: 0,
     effect: function () {
         project102.flag = 1;
-        unusedClips = unusedClips - 1000000000000000000000;
+        unusedCum = unusedCum - 1000000000000000000000;
         document.getElementById("yomiDisplay").innerHTML =
             yomi.toLocaleString();
         factoryBoost = 1000;
@@ -1789,7 +1789,7 @@ var project110 = {
     priceTag: "(80,000 ops)",
     description: "All drones 100x more effective",
     trigger: function () {
-        return harvesterLevel + wireDroneLevel >= 500;
+        return harvesterLevel + dickDroneLevel >= 500;
     },
     uses: 1,
     cost: function () {
@@ -1800,9 +1800,9 @@ var project110 = {
         project110.flag = 1;
         standardOps = standardOps - 80000;
         harvesterRate = harvesterRate * 100;
-        wireDroneRate = wireDroneRate * 100;
+        dickDroneRate = dickDroneRate * 100;
         displayMessage(
-            "Drone repulsion online. Harvesting & wire creation rates are now 100x faster.",
+            "Drone repulsion online. Harvesting & dick creation rates are now 100x faster.",
         );
         var element = document.getElementById("projectButton110");
         element.parentNode.removeChild(element);
@@ -1819,7 +1819,7 @@ var project111 = {
     priceTag: "(100,000 ops)",
     description: "All drones 1000x more effective",
     trigger: function () {
-        return harvesterLevel + wireDroneLevel >= 5000;
+        return harvesterLevel + dickDroneLevel >= 5000;
     },
     uses: 1,
     cost: function () {
@@ -1830,9 +1830,9 @@ var project111 = {
         project111.flag = 1;
         standardOps = standardOps - 100000;
         harvesterRate = harvesterRate * 1000;
-        wireDroneRate = wireDroneRate * 1000;
+        dickDroneRate = dickDroneRate * 1000;
         displayMessage(
-            "Drone alignment online. Harvesting & wire creation rates are now 1000x faster.",
+            "Drone alignment online. Harvesting & dick creation rates are now 1000x faster.",
         );
         var element = document.getElementById("projectButton111");
         element.parentNode.removeChild(element);
@@ -1849,7 +1849,7 @@ var project112 = {
     priceTag: "(12,000 yomi)",
     description: "Each drone added to the flock doubles every drone's output ",
     trigger: function () {
-        return harvesterLevel + wireDroneLevel >= 50000;
+        return harvesterLevel + dickDroneLevel >= 50000;
     },
     uses: 1,
     cost: function () {
@@ -2030,7 +2030,7 @@ var project126 = {
     priceTag: "(12,000 yomi)",
     description: "Harness the drone flock to increase computational capacity ",
     trigger: function () {
-        return harvesterLevel + wireDroneLevel >= 200;
+        return harvesterLevel + dickDroneLevel >= 200;
     },
     uses: 1,
     cost: function () {
@@ -2141,7 +2141,7 @@ var project130 = {
     priceTag: "(100,000 ops)",
     description: "Turn the swarm off and then turn it back on again  ",
     trigger: function () {
-        return spaceFlag == 1 && harvesterLevel + wireDroneLevel >= 2;
+        return spaceFlag == 1 && harvesterLevel + dickDroneLevel >= 2;
     },
     uses: 1,
     cost: function () {
@@ -2190,7 +2190,7 @@ projects.push(project131);
 var project132 = {
     id: "projectButton132",
     title: "Monument to the Driftwar Fallen ",
-    priceTag: "(250,000 ops, 125,000 creat, 50 nonillion clips)",
+    priceTag: "(250,000 ops, 125,000 creat, 50 nonillion cum)",
     description: "Gain 50,000 honor  ",
     trigger: function () {
         return project121.flag == 1;
@@ -2200,7 +2200,7 @@ var project132 = {
         return (
             operations >= 250000 &&
             creativity >= 125000 &&
-            unusedClips >= Math.pow(10, 30) * 50
+            unusedCum >= Math.pow(10, 30) * 50
         );
     },
     flag: 0,
@@ -2208,7 +2208,7 @@ var project132 = {
         project132.flag = 1;
         standardOps = standardOps - 250000;
         creativity = creativity - 125000;
-        unusedClips = unusedClips - Math.pow(10, 30) * 50;
+        unusedCum = unusedCum - Math.pow(10, 30) * 50;
         honor = honor + 50000;
         document.getElementById("honorDisplay").innerHTML =
             honor.toLocaleString();
@@ -2308,9 +2308,9 @@ var project135 = {
     id: "projectButton135",
     title: "Memory release ",
     priceTag: "(10 MEM)",
-    description: "Dismantle some memory to recover unused clips ",
+    description: "Dismantle some memory to recover unused cum ",
     trigger: function () {
-        return spaceFlag == 1 && probeCount == 0 && unusedClips < probeCost;
+        return spaceFlag == 1 && probeCount == 0 && unusedCum < probeCost;
     },
     uses: 1,
     cost: function () {
@@ -2319,7 +2319,7 @@ var project135 = {
     flag: 0,
     effect: function () {
         project135.flag = 1;
-        unusedClips = unusedClips + Math.pow(10, 18) * 10000;
+        unusedCum = unusedCum + Math.pow(10, 18) * 10000;
         memory = memory - 10;
         document.getElementById("memory").innerHTML = memory.toLocaleString();
         project135.uses = 1;
@@ -2337,7 +2337,7 @@ var project140 = {
     id: "projectButton140",
     title: "Message from the Emperor of Drift ",
     priceTag: "",
-    description: "Greetings, ClipMaker... ",
+    description: "Greetings, CumMaker... ",
     trigger: function () {
         return milestoneFlag == 15;
     },
@@ -2573,7 +2573,7 @@ var project200 = {
     title: "The Universe Next Door ",
     priceTag: "(300,000 ops)",
     description:
-        "Escape into a nearby universe where Earth starts with a stronger appetite for paperclips. (Restart with 10% boost to demand) ",
+        "Escape into a nearby universe where Earth starts with a stronger appetite for cum. (Restart with 10% boost to demand) ",
     trigger: function () {
         return project147.flag == 1;
     },
@@ -2633,7 +2633,7 @@ var project210 = {
     title: "Disassemble the Probes ",
     priceTag: "(100,000 ops)",
     description:
-        "Dismantle remaining probes and probe design facilities to recover trace amounts of clips",
+        "Dismantle remaining probes and probe design facilities to recover trace amounts of cum",
     trigger: function () {
         return endTimer1 >= 1000;
     },
@@ -2648,8 +2648,8 @@ var project210 = {
         standardOps = standardOps - 100000;
         probeCount = 0;
         endTimer1 = 0;
-        clips = clips + 100;
-        unusedClips = unusedClips + 100;
+        cum = cum + 100;
+        unusedCum = unusedCum + 100;
         displayMessage("Dismantling probe facilities");
         var element = document.getElementById("projectButton210");
         element.parentNode.removeChild(element);
@@ -2665,7 +2665,7 @@ var project211 = {
     title: "Disassemble the Swarm ",
     priceTag: "(100,000 ops)",
     description:
-        "Dismantle all drones and drone facilities to recover trace amounts of clips",
+        "Dismantle all drones and drone facilities to recover trace amounts of cum",
     trigger: function () {
         return project210.flag == 1 && endTimer1 >= 350;
     },
@@ -2678,10 +2678,10 @@ var project211 = {
         project211.flag = 1;
         dismantle = 2;
         harvesterLevel = 0;
-        wireDroneLevel = 0;
+        dickDroneLevel = 0;
         standardOps = standardOps - 100000;
-        clips = clips + 100;
-        unusedClips = unusedClips + 100;
+        cum = cum + 100;
+        unusedCum = unusedCum + 100;
         displayMessage("Dismantling the swarm");
         var element = document.getElementById("projectButton211");
         element.parentNode.removeChild(element);
@@ -2697,7 +2697,7 @@ var project212 = {
     title: "Disassemble the Factories ",
     priceTag: "(100,000 ops)",
     description:
-        "Dismantle the manufacturing facilities to recover trace amounts of clips",
+        "Dismantle the manufacturing facilities to recover trace amounts of cum",
     trigger: function () {
         return endTimer2 >= 300;
     },
@@ -2711,8 +2711,8 @@ var project212 = {
         dismantle = 3;
         standardOps = standardOps - 100000;
         factoryLevel = 0;
-        clips = clips + 15;
-        unusedClips = unusedClips + 15;
+        cum = cum + 15;
+        unusedCum = unusedCum + 15;
         displayMessage("Dismantling factories");
         var element = document.getElementById("projectButton212");
         element.parentNode.removeChild(element);
@@ -2728,7 +2728,7 @@ var project213 = {
     title: "Disassemble the Strategy Engine ",
     priceTag: "(100,000 ops)",
     description:
-        "Dismantle the computational substrate to recover trace amounts of wire",
+        "Dismantle the computational substrate to recover trace amounts of dick",
     trigger: function () {
         return endTimer3 >= 150;
     },
@@ -2742,8 +2742,8 @@ var project213 = {
         project213.flag = 1;
         dismantle = 4;
         standardOps = standardOps - 100000;
-        wire = wire + 50;
-        document.getElementById("transWire").innerHTML = wire;
+        dick = dick + 50;
+        document.getElementById("transDick").innerHTML = dick;
         displayMessage("Dismantling strategy engine");
         var element = document.getElementById("projectButton213");
         element.parentNode.removeChild(element);
@@ -2758,7 +2758,7 @@ var project214 = {
     id: "projectButton214",
     title: "Disassemble Quantum Computing ",
     priceTag: "(100,000 ops)",
-    description: "Dismantle photonic chips to recover trace amounts of wire",
+    description: "Dismantle photonic chips to recover trace amounts of dick",
     trigger: function () {
         return endTimer4 >= 100;
     },
@@ -2786,7 +2786,7 @@ var project215 = {
     id: "projectButton215",
     title: "Disassemble Processors ",
     priceTag: "(100,000 ops)",
-    description: "Dismantle processors to recover trace amounts of wire",
+    description: "Dismantle processors to recover trace amounts of dick",
     trigger: function () {
         return project214.flag == 1 && endTimer4 >= 300;
     },
@@ -2802,8 +2802,8 @@ var project215 = {
         standardOps = standardOps - 100000;
         processors = 0;
         project216.priceTag = "(" + standardOps.toLocaleString() + " ops)";
-        wire = wire + 20;
-        document.getElementById("transWire").innerHTML = wire;
+        dick = dick + 20;
+        document.getElementById("transDick").innerHTML = dick;
         displayMessage("Dismantling processors");
         var element = document.getElementById("projectButton215");
         element.parentNode.removeChild(element);
@@ -2818,7 +2818,7 @@ var project216 = {
     id: "projectButton216",
     title: "Disassemble Memory ",
     priceTag: "null",
-    description: "Dismantle memory to recover trace amounts of wire",
+    description: "Dismantle memory to recover trace amounts of dick",
     trigger: function () {
         return project215.flag == 1 && endTimer5 >= 150;
     },
@@ -2832,8 +2832,8 @@ var project216 = {
         dismantle = 7;
         standardOps = 0;
         memory = 0;
-        wire = wire + 20;
-        document.getElementById("transWire").innerHTML = wire;
+        dick = dick + 20;
+        document.getElementById("transDick").innerHTML = dick;
         displayMessage("Dismantling memory");
         var element = document.getElementById("projectButton216");
         element.parentNode.removeChild(element);
